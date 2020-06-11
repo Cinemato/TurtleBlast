@@ -25,6 +25,8 @@ public class BulletManager : MonoBehaviour
     void Start()
     {
         currentProjectile = cannonBallPrefab;
+
+        //Setting Timer To 0 For Start
         currentProjectileTime = 0;
 
         showIcon();
@@ -47,6 +49,7 @@ public class BulletManager : MonoBehaviour
 
     public void restartCurrentProjectileTime()
     {
+        //Setting Current Projectile Timer Depending On Ammo Type
         if(currentProjectile.tag == "CannonBall")
         {
             currentProjectileTime = timeInSecondsTilNextCannon;
@@ -60,6 +63,7 @@ public class BulletManager : MonoBehaviour
 
     public void showIcon()
     {
+        //Showing Icon Of Ammo Type Using Foreach Loop And Tags
         foreach(GameObject icon in icons)
         {
             if(icon.tag.Equals(currentProjectile.tag))
@@ -96,6 +100,7 @@ public class BulletManager : MonoBehaviour
 
     public void setCurrentProjectile(Projectile projectile)
     {
+        //Sets The Current Projectile With Its Shooting Time Using .getTime()
         currentProjectile = projectile;
         currentProjectileTime = projectile.getTime();
     }

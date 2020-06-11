@@ -10,10 +10,13 @@ public class BulletChange : MonoBehaviour
     {
         bm = FindObjectOfType<BulletManager>();
 
+        //Destroying Egg After 4 Seconds
         Destroy(gameObject, 4f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Setting Current Projectile Depending On The Taken Egg
+
         if(collision.gameObject.GetComponent<PlayerMovement>())
         {
             if(tag.Equals("CannonBall"))
@@ -26,8 +29,8 @@ public class BulletChange : MonoBehaviour
                 bm.setCurrentProjectile(bm.getLaserPrefab());
             }
 
-            bm.showIcon();
-            Destroy(gameObject);
+            bm.showIcon(); //Showing Icon Of New Ammo
+            Destroy(gameObject);  //Destroying Egg After Collision With Player
         }
     }
 }

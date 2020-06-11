@@ -21,9 +21,11 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        //Getting Player Input From Joystick
         Vector2 playerInput = new Vector2(js.Horizontal, js.Vertical);
         velocity = playerInput.normalized * speed;
 
+        //Checking If Player Is Going Forward Or Not
         if(js.Horizontal <= 0)
         {
             anime.SetBool("isGoingForward", false);
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Movement Using Rigidbody
         rb.MovePosition(rb.position + velocity * Time.deltaTime);
     }
 }

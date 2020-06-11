@@ -18,6 +18,7 @@ public class EggSpawner : MonoBehaviour
 
     IEnumerator spawnEgg()
     {
+        //Coroutine That Spawns Eggs Forever
         while(true)
         {
             yield return new WaitForSeconds(timeTilNextEgg);
@@ -27,13 +28,13 @@ public class EggSpawner : MonoBehaviour
 
     void spawnNextEgg()
     {
-        GameObject eggIndex = eggs[Random.Range(0, eggs.Length)];
-        while(eggIndex.tag == bm.getCurrentProjectile().tag)
+        GameObject eggIndex = eggs[Random.Range(0, eggs.Length)];  //Setting Index To A Random Egg From Array
+        while(eggIndex.tag == bm.getCurrentProjectile().tag)  //Checking If The Chosen Egg Is The Same As The Current Ammo
         {
-            eggIndex = eggs[Random.Range(0, eggs.Length)];
+            eggIndex = eggs[Random.Range(0, eggs.Length)];  //If So Then Chaning It To Another Random Egg From Array
         }
 
         GameObject egg = Instantiate(eggIndex, transform.position, Quaternion.identity);        
-        egg.transform.position = new Vector2(Random.Range(-8f, 8f), transform.position.y);
+        egg.transform.position = new Vector2(Random.Range(-8f, 8f), transform.position.y);  //Spawning Chosen Egg To Random X Axis Position Using Egg Index
     }
 }

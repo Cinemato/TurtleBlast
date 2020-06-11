@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: e50191700360305408b414122bd0b2b3
+guid: f2d5879c9cc1c614d99e1b48e4f9c1e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3745163931830953359
-    second: Turtle_0
+      213: 1596828179617380352
+    second: wingSheet_0
   - first:
-      213: 5728409991773732885
-    second: Turtle_1
+      213: 735541424880359660
+    second: wingSheet_1
   - first:
-      213: 8820914459504927705
-    second: Turtle_2
+      213: -1990779276507692183
+    second: wingSheet_2
+  - first:
+      213: -6932383998087878076
+    second: wingSheet_3
+  - first:
+      213: -1266167657023809341
+    second: wingSheet_4
+  - first:
+      213: -6944815234130018160
+    second: wingSheet_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -54,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 170
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,64 +128,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Turtle_0
+      name: wingSheet_0
       rect:
         serializedVersion: 2
-        x: 100
+        x: 90
         y: 750
-        width: 280
-        height: 140
+        width: 270
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74f7e6912e1dbfb40944875ebdd22aa0
-      internalID: -3745163931830953359
+      spriteID: ec3199ede58bd3749870864a0bbdda3d
+      internalID: 1596828179617380352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Turtle_1
+      name: wingSheet_1
       rect:
         serializedVersion: 2
-        x: 610
+        x: 570
         y: 750
-        width: 290
-        height: 140
+        width: 270
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d075ecf1541bae84badb6d4a1fa568dd
-      internalID: 5728409991773732885
+      spriteID: 9bfa108ac7a80b949aac4d755c137faf
+      internalID: 735541424880359660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Turtle_2
+      name: wingSheet_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 220
-        width: 260
-        height: 160
+        x: 90
+        y: 420
+        width: 270
+        height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3ffb1d0c1ccceb4e91249cbd7ed471e
-      internalID: 8820914459504927705
+      spriteID: 40be8eb4a4b52524da029a3b947ee3b3
+      internalID: -1990779276507692183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wingSheet_3
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 420
+        width: 270
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8e9dc047e494c44ac78c5f569c6180
+      internalID: -6932383998087878076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wingSheet_4
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 60
+        width: 270
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4255ae75d2dea0946b7d0165a8b489f4
+      internalID: -1266167657023809341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wingSheet_5
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 60
+        width: 270
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379874d6c330aed49aad228abaed3be9
+      internalID: -6944815234130018160
       vertices: []
       indices: 
       edges: []
