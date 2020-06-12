@@ -132,3 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03294ad76e101844382bf2d7a3527070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannonTip: {fileID: 1583396332166378, guid: 69679fa4836094f4b81f41c63f26d3ae, type: 3}
+  cannonChangeSFX: {fileID: 8356542071521980203, guid: b3dc39312130b8f4b8b9da0b94994e9d,
+    type: 3}

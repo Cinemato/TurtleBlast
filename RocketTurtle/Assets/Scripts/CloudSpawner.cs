@@ -8,7 +8,7 @@ public class CloudSpawner : MonoBehaviour
     [SerializeField] GameObject[] clouds;
 
     //Index To Check Which Cloud To Spawn
-    int index = 0;
+    int index;
 
     private void Start()
     {
@@ -27,19 +27,10 @@ public class CloudSpawner : MonoBehaviour
 
     void spawnCloud()
     {
+        index = Random.Range(0, clouds.Length);
         GameObject cloud = Instantiate(clouds[index], transform.position, Quaternion.identity);
 
         //Spawn Cloud At Random Y Axis Position
         cloud.transform.position = new Vector2(transform.position.x, Random.Range(-3, 3.5f));
-        index++; //Increment
-
-
-        //Reset Index
-        if(index == clouds.Length)
-        {
-            index = 0;
-        }
-
-        Destroy(cloud, 6f);
     }
 }

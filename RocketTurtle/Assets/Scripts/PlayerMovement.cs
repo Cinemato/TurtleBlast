@@ -40,6 +40,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Movement Using Rigidbody
-        rb.MovePosition(rb.position + velocity * Time.deltaTime);
+        rb.MovePosition(rb.position + (velocity * Time.deltaTime));
     }
 }
