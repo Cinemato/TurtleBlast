@@ -17,16 +17,17 @@ public class Projectile : MonoBehaviour
         bm = FindObjectOfType<BulletManager>();
 
         //Getting Different Results From BM Depending On Ammo Used
-        if(gameObject.tag == "CannonBall")
+        switch (tag)
         {
-            speed = bm.getCannonBallSpeed();
-            timeTilNext = bm.getCannonBallTime();
-        }
+            case "CannonBall":
+                speed = bm.getCannonBallSpeed();
+                timeTilNext = bm.getCannonBallTime();
+                break;
 
-        else if(gameObject.tag == "Laser")
-        {
-            speed = bm.getLaserSpeed();
-            timeTilNext = bm.getLaserTime();
+            case "Laser":
+                speed = bm.getLaserSpeed();
+                timeTilNext = bm.getLaserTime();
+                break;
         }
     }
 

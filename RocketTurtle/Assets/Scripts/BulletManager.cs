@@ -55,7 +55,7 @@ public class BulletManager : MonoBehaviour
             currentProjectileTime = timeInSecondsTilNextCannon;
         }
 
-        if(currentProjectile.tag == "Laser")
+        else if(currentProjectile.tag == "Laser")
         {
             currentProjectileTime = timeInSecondsTilNextLaser;
         }

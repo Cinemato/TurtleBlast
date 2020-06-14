@@ -8,7 +8,7 @@ public class BulletChange : MonoBehaviour
 
     private void Start()
     {
-        bm = FindObjectOfType<BulletManager>();
+        bm = FindObjectOfType<BulletManager>(); 
 
         //Destroying Egg After 4 Seconds
         Destroy(gameObject, 4f);
@@ -19,16 +19,17 @@ public class BulletChange : MonoBehaviour
 
         if(collision.gameObject.GetComponent<PlayerMovement>())
         {
-            if(tag.Equals("CannonBall"))
+            switch (tag)
             {
-                bm.setCurrentProjectile(bm.getCannonBallPrefab());
-            }
+                case "CannonBall": 
+                    bm.setCurrentProjectile(bm.getCannonBallPrefab()); 
+                    break;
 
-            if(tag.Equals("Laser"))
-            {
-                bm.setCurrentProjectile(bm.getLaserPrefab());
+                case "Laser":
+                    bm.setCurrentProjectile(bm.getLaserPrefab());
+                    break;
             }
-
+      
             bm.showIcon(); //Showing Icon Of New Ammo
             Destroy(gameObject);  //Destroying Egg After Collision With Player
         }

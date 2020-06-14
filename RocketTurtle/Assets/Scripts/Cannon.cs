@@ -31,13 +31,19 @@ public class Cannon : MonoBehaviour
         {
             switch (bm.getCurrentProjectile().tag)
             {
-                case "CannonBall": sr.sprite = normalCannon; break;
+                case "CannonBall": 
+                    sr.sprite = normalCannon; 
+                    break;
 
-                case "Laser": sr.sprite = laserCannon; break;
+                case "Laser": 
+                    sr.sprite = laserCannon; 
+                    break;
             }
 
             Vector2 vfxPosition = new Vector2(cannonTip.transform.position.x - 0.2f, cannonTip.transform.position.y);
-            Instantiate(cannonChangeVFX, vfxPosition, Quaternion.identity);
+            ParticleSystem vfx = Instantiate(cannonChangeVFX, vfxPosition, Quaternion.identity);
+
+            Destroy(vfx, 2f);
         }
     }
 }
