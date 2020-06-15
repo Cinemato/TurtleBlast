@@ -22,7 +22,7 @@ public class ObjectRemover : MonoBehaviour
 
         if(removeClouds)
         {
-            if(collision.gameObject.GetComponent<Cloud>())
+            if(collision.gameObject.GetComponent<MoveObject>())
             {
                 Destroy(collision.gameObject);
             }

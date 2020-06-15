@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: LightweightRenderPipelineAsset
+  m_Name: LWRP Asset
   m_EditorClassIdentifier: 
   k_AssetVersion: 4
-  m_RendererType: 1
-  m_RendererData: {fileID: 11400000, guid: 618d298269e66c542b306de85db1faea, type: 2}
+  m_RendererType: 0
+  m_RendererData: {fileID: 11400000, guid: 4c1c264d77f7f094e9c698485283a71d, type: 2}
   m_RequireDepthTexture: 0
   m_RequireOpaqueTexture: 0
   m_OpaqueDownsampling: 1

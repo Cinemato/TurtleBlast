@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3016631832285169843}
   - component: {fileID: -2778514419364049172}
   - component: {fileID: 3022593811989856965}
-  - component: {fileID: 1561649371396415672}
+  - component: {fileID: 993336566962016208}
   m_Layer: 0
   m_Name: cloud2
   m_TagString: Untagged
@@ -48,10 +48,11 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6151102, y: 0.60977376}
   m_EdgeRadius: 0
---- !u!114 &1561649371396415672
+--- !u!114 &993336566962016208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3016631832285169836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c0136436bffac6489f4b731c3630f62, type: 3}
+  m_Script: {fileID: 11500000, guid: e6bc8239968bbe64e91b945237b58675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5

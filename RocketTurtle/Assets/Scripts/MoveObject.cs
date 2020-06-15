@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cloud : MonoBehaviour
+public class MoveObject : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
 
@@ -10,7 +10,7 @@ public class Cloud : MonoBehaviour
 
     void Start()
     {
-        //Moving Clouds To The Left Direction Using Rigidbody
+        //Moving Object To The Left Direction Using Rigidbody
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0);
     }
