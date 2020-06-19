@@ -7,12 +7,16 @@ public class BulletManager : MonoBehaviour
     [Header("Cannon Ball")]
     [SerializeField] float cannonBallSpeed = 8f;
     [SerializeField] float timeInSecondsTilNextCannon = 2f;
+    [SerializeField] int cannonBallDamage = 5;
     [SerializeField] Projectile cannonBallPrefab;
+    [SerializeField] ParticleSystem hitCannonVFX;
 
     [Header("Laser")]
     [SerializeField] float laserSpeed = 10f;
     [SerializeField] float timeInSecondsTilNextLaser = 0;
+    [SerializeField] int laserDamage = 2;
     [SerializeField] Projectile laserPrefab;
+    [SerializeField] ParticleSystem hitLaserVFX;
 
     [Header("Bullet Icons")]
     [SerializeField] GameObject[] icons;
@@ -115,4 +119,23 @@ public class BulletManager : MonoBehaviour
         return currentProjectileTime;
     }
 
+    public int getCannonBallDamage()
+    {
+        return cannonBallDamage;
+    }
+
+    public int getLaserDamage()
+    {
+        return laserDamage;
+    }
+
+    public ParticleSystem getCannonVFX()
+    {
+        return hitCannonVFX;
+    }
+
+    public ParticleSystem getLaserVFX()
+    {
+        return hitLaserVFX;
+    }
 }

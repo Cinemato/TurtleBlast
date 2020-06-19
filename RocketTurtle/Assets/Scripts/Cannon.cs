@@ -20,11 +20,6 @@ public class Cannon : MonoBehaviour
         sr = cannon.GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.GetComponent<BulletChange>())
@@ -42,6 +37,7 @@ public class Cannon : MonoBehaviour
 
             Vector2 vfxPosition = new Vector2(cannonTip.transform.position.x - 0.2f, cannonTip.transform.position.y);
             ParticleSystem vfx = Instantiate(cannonChangeVFX, vfxPosition, Quaternion.identity);
+            vfx.transform.parent = cannonTip.transform;
 
             Destroy(vfx, 2f);
         }

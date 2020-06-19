@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CannonBall
   - Laser
+  - Cloud
   layers:
   - Default
   - TransparentFX

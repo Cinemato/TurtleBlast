@@ -12,17 +12,17 @@ public class ObjectRemover : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Destroying Objects Depending On Boolean Input
-        if(removeBullets)
+        if (removeBullets)
         {
-            if(collision.gameObject.GetComponent<Projectile>())
+            if (collision.gameObject.GetComponent<Projectile>())
             {
                 Destroy(collision.gameObject);
             }
         }
 
-        if(removeClouds)
+        if (removeClouds)
         {
-            if(collision.gameObject.GetComponent<MoveObject>())
+            if (collision.gameObject.CompareTag("Cloud"))
             {
                 Destroy(collision.gameObject);
             }
@@ -30,7 +30,11 @@ public class ObjectRemover : MonoBehaviour
 
         if(removeEnemies)
         {
-            //Remove Enemies (WIP)
+            if(collision.gameObject.GetComponent<Enemy>())
+            {
+                EnemySpawner.count--;
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

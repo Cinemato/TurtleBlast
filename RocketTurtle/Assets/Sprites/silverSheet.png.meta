@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 91d199c76016801438f4255f7416bb5d
+guid: e8ddadb9fa446ce4dbd22ed10c738e59
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5293450877803704068
+    second: silverSheet_0
+  - first:
+      213: 1263546416157490372
+    second: silverSheet_1
+  - first:
+      213: -875720102488331651
+    second: silverSheet_2
+  - first:
+      213: -1002765427324035213
+    second: silverSheet_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,12 +52,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 220
+  spritePixelsToUnits: 380
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: silverSheet_0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1400
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0d788f872e986b0800000000000000
+      internalID: -5293450877803704068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silverSheet_1
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1400
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccf84c55c4098110800000000000000
+      internalID: 1263546416157490372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silverSheet_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 340
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7aa380e431d8d3f0800000000000000
+      internalID: -875720102488331651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silverSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 380
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fde4f18267512f0800000000000000
+      internalID: -1002765427324035213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

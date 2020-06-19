@@ -10,6 +10,8 @@ public class Projectile : MonoBehaviour
     //Will Get Input From Bullet Manager
     float speed;
     float timeTilNext;
+    int damage;
+    ParticleSystem hitVFX;
 
     void Start()
     {
@@ -22,15 +24,18 @@ public class Projectile : MonoBehaviour
             case "CannonBall":
                 speed = bm.getCannonBallSpeed();
                 timeTilNext = bm.getCannonBallTime();
+                damage = bm.getCannonBallDamage();
+                hitVFX = bm.getCannonVFX();
                 break;
 
             case "Laser":
                 speed = bm.getLaserSpeed();
                 timeTilNext = bm.getLaserTime();
+                damage = bm.getLaserDamage();
+                hitVFX = bm.getLaserVFX();
                 break;
         }
     }
-
 
     void Update()
     {
@@ -43,5 +48,15 @@ public class Projectile : MonoBehaviour
     {
         //To Be Used In BM Class
         return timeTilNext;
+    }
+
+    public int getDamage()
+    {
+        return damage;
+    }
+
+    public ParticleSystem getHitVFX()
+    {
+        return hitVFX;
     }
 }
