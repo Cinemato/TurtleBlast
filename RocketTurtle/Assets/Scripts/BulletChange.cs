@@ -28,6 +28,10 @@ public class BulletChange : MonoBehaviour
                 case "Laser":
                     bm.setCurrentProjectile(bm.getLaserPrefab());
                     break;
+
+                case "Ray":
+                    bm.setCurrentProjectile(bm.getRayPrefab());
+                    break;
             }
       
             bm.showIcon(); //Showing Icon Of New Ammo

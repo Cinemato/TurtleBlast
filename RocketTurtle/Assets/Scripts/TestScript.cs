@@ -20,7 +20,7 @@ public class TestScript : MonoBehaviour
             anime.SetBool("isDay", true);
         }
 
-        if(!day)
+        else if(!day)
         {
             anime.SetBool("isDay", false);
         }

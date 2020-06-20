@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     float speed;
     float timeTilNext;
     int damage;
-    ParticleSystem hitVFX;
+    GameObject hitVFX;
 
     void Start()
     {
@@ -34,6 +34,13 @@ public class Projectile : MonoBehaviour
                 damage = bm.getLaserDamage();
                 hitVFX = bm.getLaserVFX();
                 break;
+
+            case "Ray":
+                speed = bm.getRaySpeed();
+                timeTilNext = bm.getRayTime();
+                damage = bm.getRayDamage();
+                hitVFX = bm.getRayVFX();
+                break;
         }
     }
 
@@ -55,7 +62,7 @@ public class Projectile : MonoBehaviour
         return damage;
     }
 
-    public ParticleSystem getHitVFX()
+    public GameObject getHitVFX()
     {
         return hitVFX;
     }

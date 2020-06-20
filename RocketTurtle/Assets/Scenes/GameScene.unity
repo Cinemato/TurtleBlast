@@ -718,6 +718,7 @@ RectTransform:
   m_Children:
   - {fileID: 1668945066}
   - {fileID: 688064466}
+  - {fileID: 1698849436}
   m_Father: {fileID: 1544384733}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -879,18 +880,26 @@ MonoBehaviour:
   cannonBallDamage: 5
   cannonBallPrefab: {fileID: 137251623099515411, guid: 65cfdbeb74f69cc47b4a10b0f3bd7d17,
     type: 3}
-  hitCannonVFX: {fileID: 2778150534276594167, guid: 4ffd5687fd277f54f874bca0bbea4c10,
+  hitCannonVFX: {fileID: 2778150534276594165, guid: 4ffd5687fd277f54f874bca0bbea4c10,
     type: 3}
   laserSpeed: 10
   timeInSecondsTilNextLaser: 0
   laserDamage: 2
   laserPrefab: {fileID: 5790892938576758735, guid: f4a5eb685186cf74c8054b1a89fa4b76,
     type: 3}
-  hitLaserVFX: {fileID: 3151690269947350037, guid: de3713c3ac7a7c14baa8ac79da8906f2,
+  hitLaserVFX: {fileID: 3151690269947350039, guid: de3713c3ac7a7c14baa8ac79da8906f2,
+    type: 3}
+  raySpeed: 8
+  timeInSecondsTilNextRay: 0.5
+  rayDamage: 3
+  rayPrefab: {fileID: 444809059606441288, guid: e55c01a88695b5348bd582d701edf0d0,
+    type: 3}
+  hitRayVFX: {fileID: 1322995119755310853, guid: 208c8ec86cf16584c970ab84aeab6226,
     type: 3}
   icons:
   - {fileID: 1668945065}
   - {fileID: 688064465}
+  - {fileID: 1698849435}
 --- !u!4 &414251293
 Transform:
   m_ObjectHideFlags: 0
@@ -1263,6 +1272,7 @@ MonoBehaviour:
   eggs:
   - {fileID: 587694991431200305, guid: 7fdb0f3427728f140aa7bc3aceeaaabe, type: 3}
   - {fileID: 7227751515061392613, guid: ae8337f5e93e8854ab1b6eaba8f45e5e, type: 3}
+  - {fileID: 7557052147998677784, guid: ce746abbce77cd04ab0c048690f3bfb9, type: 3}
   timeTilNextEgg: 5
 --- !u!4 &587972696
 Transform:
@@ -1645,10 +1655,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannon: {fileID: 74701696}
   cannonTip: {fileID: 284588605}
-  cannonChangeVFX: {fileID: 7715752613217104801, guid: b3dc39312130b8f4b8b9da0b94994e9d,
+  cannonChangeVFX: {fileID: 8356542071521980203, guid: b3dc39312130b8f4b8b9da0b94994e9d,
     type: 3}
   normalCannon: {fileID: 21300000, guid: 917e556ed1966da4f861d2985cf0ebd1, type: 3}
   laserCannon: {fileID: 21300000, guid: 7a2aebe8a66d77c4eb47e0be2f82066c, type: 3}
+  rayCannon: {fileID: 21300000, guid: 2564b8d6d6d0ebb428945d775c751df0, type: 3}
 --- !u!1 &983900893
 GameObject:
   m_ObjectHideFlags: 0
@@ -7033,6 +7044,79 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668945065}
+  m_CullTransparentMesh: 0
+--- !u!1 &1698849435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1698849436}
+  - component: {fileID: 1698849438}
+  - component: {fileID: 1698849437}
+  m_Layer: 5
+  m_Name: RayIcon
+  m_TagString: Ray
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1698849436
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698849435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 302110433}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 87, y: -6.3}
+  m_SizeDelta: {x: 88.88889, y: 88.88889}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1698849437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698849435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4b62526db1b87ed4bb30a76017e0af0f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1698849438
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698849435}
   m_CullTransparentMesh: 0
 --- !u!1 &1735067362
 GameObject:

@@ -9,14 +9,21 @@ public class BulletManager : MonoBehaviour
     [SerializeField] float timeInSecondsTilNextCannon = 2f;
     [SerializeField] int cannonBallDamage = 5;
     [SerializeField] Projectile cannonBallPrefab;
-    [SerializeField] ParticleSystem hitCannonVFX;
+    [SerializeField] GameObject hitCannonVFX;
 
     [Header("Laser")]
     [SerializeField] float laserSpeed = 10f;
     [SerializeField] float timeInSecondsTilNextLaser = 0;
     [SerializeField] int laserDamage = 2;
     [SerializeField] Projectile laserPrefab;
-    [SerializeField] ParticleSystem hitLaserVFX;
+    [SerializeField] GameObject hitLaserVFX;
+
+    [Header("Ray Gun")]
+    [SerializeField] float raySpeed = 8f;
+    [SerializeField] float timeInSecondsTilNextRay = 0.5f;
+    [SerializeField] int rayDamage = 2;
+    [SerializeField] Projectile rayPrefab;
+    [SerializeField] GameObject hitRayVFX;
 
     [Header("Bullet Icons")]
     [SerializeField] GameObject[] icons;
@@ -35,42 +42,37 @@ public class BulletManager : MonoBehaviour
 
         showIcon();
     }
-    
+
     void Update()
     {
         currentProjectileTime -= Time.deltaTime;
     }
 
-    public float getCannonBallSpeed()
-    {
-        return cannonBallSpeed;
-    }
-
-    public float getCannonBallTime()
-    {
-        return timeInSecondsTilNextCannon;
-    }
-
     public void restartCurrentProjectileTime()
     {
         //Setting Current Projectile Timer Depending On Ammo Type
-        if(currentProjectile.tag == "CannonBall")
+        switch (currentProjectile.tag)
         {
-            currentProjectileTime = timeInSecondsTilNextCannon;
-        }
+            case "CannonBall":
+                currentProjectileTime = timeInSecondsTilNextCannon;
+                break;
 
-        else if(currentProjectile.tag == "Laser")
-        {
-            currentProjectileTime = timeInSecondsTilNextLaser;
+            case "Laser":
+                currentProjectileTime = timeInSecondsTilNextLaser;
+                break;
+
+            case "Ray":
+                currentProjectileTime = timeInSecondsTilNextRay;
+                break;
         }
     }
 
     public void showIcon()
     {
         //Showing Icon Of Ammo Type Using Foreach Loop And Tags
-        foreach(GameObject icon in icons)
+        foreach (GameObject icon in icons)
         {
-            if(icon.tag.Equals(currentProjectile.tag))
+            if (icon.tag.Equals(currentProjectile.tag))
             {
                 icon.SetActive(true);
             }
@@ -82,26 +84,7 @@ public class BulletManager : MonoBehaviour
         }
     }
 
-    public float getLaserSpeed()
-    {
-        return laserSpeed;
-    }
-
-    public float getLaserTime()
-    {
-        return timeInSecondsTilNextLaser;
-    }
-
-    public Projectile getCannonBallPrefab()
-    {
-        return cannonBallPrefab;
-    }
-
-    public Projectile getLaserPrefab()
-    {
-        return laserPrefab;
-    }
-
+    //Current Projectile Getters/Setters
     public void setCurrentProjectile(Projectile projectile)
     {
         //Sets The Current Projectile With Its Shooting Time Using .getTime()
@@ -119,9 +102,47 @@ public class BulletManager : MonoBehaviour
         return currentProjectileTime;
     }
 
+    //Cannon Ball Getters
+    public Projectile getCannonBallPrefab()
+    {
+        return cannonBallPrefab;
+    }
+
+    public GameObject getCannonVFX()
+    {
+        return hitCannonVFX;
+    }
+
+    public float getCannonBallSpeed()
+    {
+        return cannonBallSpeed;
+    }
+
     public int getCannonBallDamage()
     {
         return cannonBallDamage;
+    }
+
+    public float getCannonBallTime()
+    {
+        return timeInSecondsTilNextCannon;
+    }
+
+
+    //Laser Getters
+    public Projectile getLaserPrefab()
+    {
+        return laserPrefab;
+    }
+
+    public GameObject getLaserVFX()
+    {
+        return hitLaserVFX;
+    }
+
+    public float getLaserSpeed()
+    {
+        return laserSpeed;
     }
 
     public int getLaserDamage()
@@ -129,13 +150,49 @@ public class BulletManager : MonoBehaviour
         return laserDamage;
     }
 
-    public ParticleSystem getCannonVFX()
+    public float getLaserTime()
     {
-        return hitCannonVFX;
+        return timeInSecondsTilNextLaser;
     }
 
-    public ParticleSystem getLaserVFX()
+    //Ray Getters
+    public Projectile getRayPrefab()
     {
-        return hitLaserVFX;
+        return rayPrefab;
     }
+
+    public GameObject getRayVFX()
+    {
+        return hitRayVFX;
+    }
+
+    public float getRaySpeed()
+    {
+        return raySpeed;
+    }
+
+    public int getRayDamage()
+    {
+        return rayDamage;
+    }
+
+    public float getRayTime()
+    {
+        return timeInSecondsTilNextRay;
+    }
+
+   
+
+    
+   
+
+   
+
+   
+
+    
+
+  
+
+   
 }
