@@ -180,19 +180,4 @@ public class BulletManager : MonoBehaviour
     {
         return timeInSecondsTilNextRay;
     }
-
-   
-
-    
-   
-
-   
-
-   
-
-    
-
-  
-
-   
 }

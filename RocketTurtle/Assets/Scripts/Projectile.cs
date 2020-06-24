@@ -4,57 +4,58 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    Rigidbody2D rb;
-    BulletManager bm;
-
-    //Will Get Input From Bullet Manager
-    float speed;
+    //Will Get Input From Bullet Container
     float timeTilNext;
     int damage;
     GameObject hitVFX;
+    GameObject bulletPrefab;
+    Sprite cannonSprite;
+    AudioClip shootSFX;
+    string name;
 
-    void Start()
+    private void Start()
     {
-        //Defining Bullet Manager
-        bm = FindObjectOfType<BulletManager>();
-
-        //Getting Different Results From BM Depending On Ammo Used
-        switch (tag)
+        for(int i = 0; i < BulletContainer.projectiles.Count; i++)
         {
-            case "CannonBall":
-                speed = bm.getCannonBallSpeed();
-                timeTilNext = bm.getCannonBallTime();
-                damage = bm.getCannonBallDamage();
-                hitVFX = bm.getCannonVFX();
-                break;
-
-            case "Laser":
-                speed = bm.getLaserSpeed();
-                timeTilNext = bm.getLaserTime();
-                damage = bm.getLaserDamage();
-                hitVFX = bm.getLaserVFX();
-                break;
-
-            case "Ray":
-                speed = bm.getRaySpeed();
-                timeTilNext = bm.getRayTime();
-                damage = bm.getRayDamage();
-                hitVFX = bm.getRayVFX();
-                break;
+            if(BulletContainer.projectiles[i].name == tag)
+            {
+                timeTilNext = BulletContainer.projectiles[i].timeTilNext;
+                damage = BulletContainer.projectiles[i].damage;
+                hitVFX = BulletContainer.projectiles[i].hitVFX;
+                bulletPrefab = BulletContainer.projectiles[i].bulletPrefab;
+                cannonSprite = BulletContainer.projectiles[i].cannonSprite;
+                shootSFX = BulletContainer.projectiles[i].shootSFX;
+            }
         }
     }
-
-    void Update()
+    public static Projectile NewProjectile(float timeTilNext, int damage, GameObject hitVFX, GameObject bulletPrefab, Sprite cannonSprite, AudioClip shootSFX, string name)
     {
-        //Moving Projectile To The Right Using Rigidbody
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(speed, 0);
+        Projectile projectile = new GameObject("Projectiles").AddComponent<Projectile>();
+
+        projectile.timeTilNext = timeTilNext;
+        projectile.damage = damage;
+        projectile.hitVFX = hitVFX;
+        projectile.bulletPrefab = bulletPrefab;
+        projectile.cannonSprite = cannonSprite;
+        projectile.shootSFX = shootSFX;
+        projectile.name = name;
+
+        return projectile;
     }
 
     public float getTime()
     {
-        //To Be Used In BM Class
         return timeTilNext;
+    }
+
+    public Sprite getCannonSprite()
+    {
+        return cannonSprite;
+    }
+
+    public GameObject getHitVFX()
+    {
+        return hitVFX;
     }
 
     public int getDamage()
@@ -62,8 +63,17 @@ public class Projectile : MonoBehaviour
         return damage;
     }
 
-    public GameObject getHitVFX()
+    public GameObject getPrefab()
     {
-        return hitVFX;
+        return bulletPrefab;
+    }
+    public AudioClip getShootSFX()
+    {
+        return shootSFX;
+    }
+
+    public void setPrefab(GameObject prefab)
+    {
+        this.bulletPrefab = prefab;
     }
 }

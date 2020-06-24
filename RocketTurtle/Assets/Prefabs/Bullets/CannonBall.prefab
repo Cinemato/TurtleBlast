@@ -4766,7 +4766,8 @@ GameObject:
   - component: {fileID: 6964708503796681710}
   - component: {fileID: 6964708503796681715}
   - component: {fileID: 6964708503796681712}
-  - component: {fileID: 137251623099515411}
+  - component: {fileID: 3272246505537799099}
+  - component: {fileID: -8220496534354536912}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: CannonBall
@@ -4782,7 +4783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6964708503796681711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.53, y: 0.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 762862408094681469}
@@ -4876,7 +4877,21 @@ CircleCollider2D:
   m_Offset: {x: -0.019401014, y: 0.0121257305}
   serializedVersion: 2
   m_Radius: 0.20189506
---- !u!114 &137251623099515411
+--- !u!114 &3272246505537799099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964708503796681711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6bc8239968bbe64e91b945237b58675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  towardsRight: 1
+--- !u!114 &-8220496534354536912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

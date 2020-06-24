@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  towardsRight: 0
 --- !u!114 &7810482609326988201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +183,5 @@ MonoBehaviour:
   damage: 0
   deathVFX: {fileID: 4624955092719076306, guid: 43d776930c0153c41946e9489c927731,
     type: 3}
+  explosionSFX: {fileID: 8300000, guid: 4bb1b705a77eca240a4824ea1f5110b0, type: 3}
+  hitSFX: {fileID: 8300000, guid: 63b31f431a6fae44e8dca915b5ff9e0f, type: 3}

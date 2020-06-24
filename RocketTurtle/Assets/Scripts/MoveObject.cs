@@ -5,14 +5,38 @@ using UnityEngine;
 public class MoveObject : MonoBehaviour
 {
     [SerializeField] float speed = 5f;
+    [SerializeField] bool towardsRight = true;
 
     Rigidbody2D rb;
 
     void Start()
     {
-        //Moving Object To The Left Direction Using Rigidbody
+        //Moving Object Using Rigidbody
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(-speed, 0);
+        if(!towardsRight)
+        {
+            rb.velocity = new Vector2(-speed, 0);
+        }
+        
+        else
+        {
+            rb.velocity = new Vector2(speed, 0);
+        }
+    }
+
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    public void setTowardsRight(bool towardsRight)
+    {
+        this.towardsRight = towardsRight;
+    }
+
+    public bool getTowardsRight()
+    {
+        return towardsRight;
     }
 
 }

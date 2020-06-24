@@ -7,12 +7,9 @@ public class EggSpawner : MonoBehaviour
     [SerializeField] GameObject[] eggs;
     [SerializeField] float timeTilNextEgg = 30f;
 
-    BulletManager bm;
 
     private void Start()
     {
-        bm = FindObjectOfType<BulletManager>();
-
         StartCoroutine(spawnEgg());
     }
 
@@ -29,7 +26,7 @@ public class EggSpawner : MonoBehaviour
     void spawnNextEgg()
     {
         GameObject eggIndex = eggs[Random.Range(0, eggs.Length)];  //Setting Index To A Random Egg From Array
-        while(eggIndex.tag == bm.getCurrentProjectile().tag)  //Checking If The Chosen Egg Is The Same As The Current Ammo
+        while(eggIndex.tag == BulletContainer.currentBullet.getPrefab().tag)  //Checking If The Chosen Egg Is The Same As The Current Ammo
         {
             eggIndex = eggs[Random.Range(0, eggs.Length)];  //If So Then Chaning It To Another Random Egg From Array
         }

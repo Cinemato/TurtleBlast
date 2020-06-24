@@ -42,4 +42,5 @@ public class PlayerMovement : MonoBehaviour
         //Movement Using Rigidbody
         rb.MovePosition(rb.position + (velocity * Time.deltaTime));
     }
+ 
 }

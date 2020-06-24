@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour
 {
-    [SerializeField] GameObject cannon;
-    [SerializeField] GameObject cannonTip;
-    [SerializeField] GameObject cannonChangeVFX;
+    [SerializeField] GameObject cannon = null;
+    [SerializeField] GameObject cannonTip = null;
+    [SerializeField] GameObject cannonChangeVFX = null;
+    [SerializeField] AudioClip cannonChangeSFX = null;
 
-    [SerializeField] Sprite normalCannon;
-    [SerializeField] Sprite laserCannon;
-    [SerializeField] Sprite rayCannon;
-    
-    BulletManager bm;
     SpriteRenderer sr;
 
     private void Start()
     {
-        bm = FindObjectOfType<BulletManager>();
         sr = cannon.GetComponent<SpriteRenderer>();
     }
 
@@ -25,23 +20,11 @@ public class Cannon : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<BulletChange>())
         {
-            switch (bm.getCurrentProjectile().tag)
-            {
-                case "CannonBall": 
-                    sr.sprite = normalCannon; 
-                    break;
-
-                case "Laser": 
-                    sr.sprite = laserCannon; 
-                    break;
-                case "Ray":
-                    sr.sprite = rayCannon;
-                    break;
-            }
-
+            sr.sprite = BulletContainer.currentBullet.getCannonSprite();
             Vector2 vfxPosition = new Vector2(cannonTip.transform.position.x - 0.2f, cannonTip.transform.position.y);
             GameObject vfx = Instantiate(cannonChangeVFX, vfxPosition, Quaternion.identity);
             vfx.transform.parent = cannonTip.transform;
+            AudioSource.PlayClipAtPoint(cannonChangeSFX, Camera.main.transform.position, 0.6f);
 
             Destroy(vfx, 2f);
         }

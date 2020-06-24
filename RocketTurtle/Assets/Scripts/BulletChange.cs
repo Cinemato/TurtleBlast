@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class BulletChange : MonoBehaviour
 {
-    BulletManager bm;
-
     private void Start()
     {
-        bm = FindObjectOfType<BulletManager>(); 
-
         //Destroying Egg After 4 Seconds
         Destroy(gameObject, 4f);
     }
@@ -21,20 +17,20 @@ public class BulletChange : MonoBehaviour
         {
             switch (tag)
             {
-                case "CannonBall": 
-                    bm.setCurrentProjectile(bm.getCannonBallPrefab()); 
+                case "CannonBall":
+                    BulletContainer.setCurrentProjectile(BulletContainer.cannonBall); 
                     break;
 
                 case "Laser":
-                    bm.setCurrentProjectile(bm.getLaserPrefab());
+                    BulletContainer.setCurrentProjectile(BulletContainer.laser);
                     break;
 
                 case "Ray":
-                    bm.setCurrentProjectile(bm.getRayPrefab());
+                    BulletContainer.setCurrentProjectile(BulletContainer.rayBeam);
                     break;
             }
       
-            bm.showIcon(); //Showing Icon Of New Ammo
+            BulletContainer.currentBulletTime = 0;
             Destroy(gameObject);  //Destroying Egg After Collision With Player
         }
     }

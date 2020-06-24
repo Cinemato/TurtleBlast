@@ -6,19 +6,15 @@ public class PlayerFire : MonoBehaviour
 {
     [SerializeField] GameObject cannonTip;
     [SerializeField] TextMeshProUGUI fireButtonText;
+    [SerializeField] BulletContainer bulletContainer;
 
-    BulletManager bm;
-
-    private void Start()
-    {
-        bm = FindObjectOfType<BulletManager>();
-    }
+    [SerializeField] CameraShake cm;
 
     private void Update()
     {
-        if (bm.getCurrentProjectileTime() > 0)  //Checking If Shooting Timer Is Finished Or Not
+        if (BulletContainer.currentBulletTime > 0)  //Checking If Shooting Timer Is Finished Or Not
         {
-            fireButtonText.SetText(bm.getCurrentProjectileTime().ToString().Substring(0, 3)); //Changing Text
+            fireButtonText.SetText(BulletContainer.currentBulletTime.ToString().Substring(0, 3)); //Changing Text
         }
 
         else
@@ -28,13 +24,27 @@ public class PlayerFire : MonoBehaviour
         
     }
 
-
     public void fire()
     {     
-        if(bm.getCurrentProjectileTime() <= 0)
+        if(BulletContainer.currentBulletTime <= 0)
         {
-            Projectile bullet = Instantiate(bm.getCurrentProjectile(), cannonTip.transform.position, Quaternion.identity);  //Spawning Bullet Depending On The Position Of Cannon Tip
-            bm.restartCurrentProjectileTime();  //Restating The Shooting Timer Of The Current Projectile
+            GameObject i = Instantiate(BulletContainer.currentBullet.getPrefab(), cannonTip.transform.position, Quaternion.identity);  //Spawning Bullet Depending On The Position Of Cannon Tip
+            Debug.Log(i.tag);
+            AudioSource.PlayClipAtPoint(BulletContainer.currentBullet.getShootSFX(), Camera.main.transform.position, 0.5f);
+            bulletContainer.restartCurrentProjectileTime();  //Restating The Shooting Timer Of The Current Projectile
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<BulletChange>())
+        {
+            bulletContainer.showIcon();
+        }
+    }
+
+    public void shakeCamera(float mag, float duration)
+    {
+        StartCoroutine(cm.Shake(mag, duration));
     }
 }
