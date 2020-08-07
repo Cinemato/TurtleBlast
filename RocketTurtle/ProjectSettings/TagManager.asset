@@ -8,6 +8,14 @@ TagManager:
   - Laser
   - Cloud
   - Ray
+  - UpperCannon
+  - MiddleCannon
+  - LowerCannon
+  - BigParrot
+  - NormalParrot
+  - FluffCannon
+  - FluffBall
+  - FastParrot
   layers:
   - Default
   - TransparentFX

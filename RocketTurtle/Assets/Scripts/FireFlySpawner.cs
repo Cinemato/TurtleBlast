@@ -6,6 +6,7 @@ public class FireFlySpawner : MonoBehaviour
 {
     [SerializeField] GameObject fireFlyPrefab;
     [SerializeField] float timeTilNextFireFly = 5f;
+    [SerializeField] DayNight dayNight;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class FireFlySpawner : MonoBehaviour
     {
         while(true)
         {
-            if (!DayNight.anime.GetBool("isDay"))
+            if (!dayNight.GetComponent<Animator>().GetBool("isDay"))
             {
                 yield return new WaitForSeconds(timeTilNextFireFly);
                 spawnFireFlies();

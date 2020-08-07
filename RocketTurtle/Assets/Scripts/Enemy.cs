@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int hp = 5;
-    [SerializeField] int damage;
+    [SerializeField] float hp;
+    [SerializeField] float spawnChance;
+    [SerializeField] int scoreToSpawn;
+    [SerializeField] int spawnLimit;
     [SerializeField] GameObject deathVFX = null;
     [SerializeField] AudioClip explosionSFX = null;
     [SerializeField] AudioClip hitSFX = null;
-
+    [SerializeField] GameObject star = null;
+    [SerializeField] AudioClip starCollectionSound = null;
+    [SerializeField] int scoreAdditionAmount = 1;
 
     PlayerFire pf;
+    ScoreManager sm;
 
     private void Start()
     {
+        if (GameObject.FindGameObjectsWithTag(tag).Length - 1 >= spawnLimit && !CompareTag("FluffBall"))
+        {
+            Debug.Log(tag);
+            EnemySpawner.count--;
+            Destroy(gameObject);
+        }
+
+        sm = FindObjectOfType<ScoreManager>();
         pf = FindObjectOfType<PlayerFire>();
-    }
+    } 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,26 +40,35 @@ public class Enemy : MonoBehaviour
             AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, 4);
             Destroy(collision.gameObject);
             Destroy(hitVFX, 2f);
-
             
             recieveDamage(projectile.getDamage());
         }
-
-        else if(collision.gameObject.GetComponent<PlayerMovement>())
-        {
-            GameObject explodeVFX = Instantiate(deathVFX, collision.gameObject.transform.position, Quaternion.identity);
-            Destroy(collision.gameObject);
-            explode();
-        }
     }
 
-    void recieveDamage(int damage)
+    void recieveDamage(float damage)
     {
         hp -= damage;
 
         if (hp <= 0)
         {
-            explode();
+            if (GetComponent<EnemyProjectileMovement>() == null && FindObjectOfType<PlayerMovement>() != null)
+            {
+                ScoreManager.addToScore(scoreAdditionAmount);
+
+                if(CompareTag("BigParrot"))
+                {
+                    Currency.addStars(1, star, transform.position, starCollectionSound);
+                    sm.additionScore(scoreAdditionAmount);
+                }
+
+                if (ScoreManager.currentScore % 5 == 0)
+                {
+                    Currency.addStars(1, star, transform.position, starCollectionSound);
+                }
+
+            }
+
+            explode();                                   
         }    
         
         else
@@ -58,10 +80,38 @@ public class Enemy : MonoBehaviour
     void explode()
     {
         GameObject explodeVFX = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        Destroy(explodeVFX, 2f);
-        EnemySpawner.count--;
+        Destroy(explodeVFX, 3f);
+        if(!CompareTag("FluffBall"))
+        {
+            EnemySpawner.count--;
+        }   
         AudioSource.PlayClipAtPoint(explosionSFX, Camera.main.transform.position, 0.6f);
         pf.shakeCamera(0.3f, 0.05f);
         Destroy(gameObject);
+    }
+
+    public float getSpawnChance()
+    {
+        return spawnChance;
+    }
+
+    public int getScoreToSpawn()
+    {
+        return scoreToSpawn;
+    }
+
+    public int getSpawnLimit()
+    {
+        return spawnLimit;
+    }
+
+    public float getHealth()
+    {
+        return hp;
+    }
+
+    public void setSpawnLimit(int spawnLimit)
+    {
+        this.spawnLimit = spawnLimit; 
     }
 }

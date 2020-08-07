@@ -84,8 +84,8 @@ GameObject:
   - component: {fileID: 878104068639185006}
   - component: {fileID: 1552527028}
   - component: {fileID: -5927846706079329699}
-  - component: {fileID: -2257819268950055752}
   - component: {fileID: -6473143010681937250}
+  - component: {fileID: 2642884341445205453}
   m_Layer: 0
   m_Name: laserBullet
   m_TagString: Laser
@@ -205,20 +205,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-2257819268950055752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4692171594025769783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6bc8239968bbe64e91b945237b58675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  towardsRight: 1
 --- !u!114 &-6473143010681937250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,3 +217,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97886d3c66bc044d9f537480d912a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2642884341445205453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692171594025769783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700929cdd21162145b6a6215b6ff479e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15

@@ -24,6 +24,16 @@ public class MoveObject : MonoBehaviour
         }
     }
 
+    public void upperBullet()
+    {
+        rb.velocity = new Vector2(speed, 0.7f);
+    }
+
+    public void lowerBullet()
+    {
+        rb.velocity = new Vector2(speed, -0.7f);
+    }
+
     public void setSpeed(float speed)
     {
         this.speed = speed;

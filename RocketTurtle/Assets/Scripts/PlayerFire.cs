@@ -4,10 +4,11 @@ using UnityEngine;
 using TMPro;
 public class PlayerFire : MonoBehaviour
 {
-    [SerializeField] GameObject cannonTip;
+    [SerializeField] CannonTip[] cannonTips;
+    [SerializeField] GameObject[] reservers;
     [SerializeField] TextMeshProUGUI fireButtonText;
     [SerializeField] BulletContainer bulletContainer;
-
+    [SerializeField] PlayerStats ps;
     [SerializeField] CameraShake cm;
 
     private void Update()
@@ -28,8 +29,15 @@ public class PlayerFire : MonoBehaviour
     {     
         if(BulletContainer.currentBulletTime <= 0)
         {
-            GameObject i = Instantiate(BulletContainer.currentBullet.getPrefab(), cannonTip.transform.position, Quaternion.identity);  //Spawning Bullet Depending On The Position Of Cannon Tip
-            Debug.Log(i.tag);
+            for(int i = 0; i < cannonTips.Length; i++)
+            {
+                if(cannonTips[i].getIsUsed())
+                {
+                    GameObject a = Instantiate(BulletContainer.currentBullet.getPrefab(), cannonTips[i].transform.position, Quaternion.identity);  //Spawning Bullet Depending On The Position Of Cannon Tip
+                    a.transform.SetParent(reservers[i].transform);
+                }
+            }
+            
             AudioSource.PlayClipAtPoint(BulletContainer.currentBullet.getShootSFX(), Camera.main.transform.position, 0.5f);
             bulletContainer.restartCurrentProjectileTime();  //Restating The Shooting Timer Of The Current Projectile
         }
@@ -47,4 +55,24 @@ public class PlayerFire : MonoBehaviour
     {
         StartCoroutine(cm.Shake(mag, duration));
     }
+
+    public void changeNumberOfWeapons()
+    {
+        switch(ps.getNumberOfWeapons())
+        {
+            case 2:
+                cannonTips[0].setIsUsed(false);
+                cannonTips[1].setIsUsed(true);
+                cannonTips[2].setIsUsed(true);
+                break;
+
+            case 3:
+                cannonTips[0].setIsUsed(true);
+                break;
+
+            default:
+                Debug.Log("Error"); break;
+        }                              
+    }
 }
+

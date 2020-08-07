@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7810482609326988201}
   m_Layer: 0
   m_Name: Parrot
-  m_TagString: Untagged
+  m_TagString: NormalParrot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -5293450877803704068, guid: e8ddadb9fa446ce4dbd22ed10c738e59,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bc8239968bbe64e91b945237b58675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 4
   towardsRight: 0
 --- !u!114 &7810482609326988201
 MonoBehaviour:
@@ -179,9 +179,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39e40b6886c70e478859b8e39acc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
-  damage: 0
+  hp: 7
+  spawnChance: 0.1
+  scoreToSpawn: 0
+  spawnLimit: 30
   deathVFX: {fileID: 4624955092719076306, guid: 43d776930c0153c41946e9489c927731,
     type: 3}
   explosionSFX: {fileID: 8300000, guid: 4bb1b705a77eca240a4824ea1f5110b0, type: 3}
   hitSFX: {fileID: 8300000, guid: 63b31f431a6fae44e8dca915b5ff9e0f, type: 3}
+  star: {fileID: 1031819938565991675, guid: cb638a11bf73b0349a89385328317fd4, type: 3}
+  starCollectionSound: {fileID: 8300000, guid: f43bcdd8f783dd84881dcd2aa18d90d4, type: 3}

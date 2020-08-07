@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class BulletChange : MonoBehaviour
 {
-    private void Start()
-    {
-        //Destroying Egg After 4 Seconds
-        Destroy(gameObject, 4f);
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Setting Current Projectile Depending On The Taken Egg

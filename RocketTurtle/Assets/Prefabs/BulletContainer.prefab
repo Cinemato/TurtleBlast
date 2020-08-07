@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1333045090416735797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333045090416735755}
+  - component: {fileID: 1333045090416735796}
+  m_Layer: 0
+  m_Name: BulletContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1333045090416735755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333045090416735797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333045090416735796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333045090416735797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b971c98c03de86341bcd45a2ceec7b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeInSecondsTilNextCannon: 1
+  cannonBallDamage: 7
+  cannonBallPrefab: {fileID: 6964708503796681711, guid: 65cfdbeb74f69cc47b4a10b0f3bd7d17,
+    type: 3}
+  hitCannonVFX: {fileID: 2778150534276594165, guid: 4ffd5687fd277f54f874bca0bbea4c10,
+    type: 3}
+  cannonSprite: {fileID: 21300000, guid: 917e556ed1966da4f861d2985cf0ebd1, type: 3}
+  cannonShootSFX: {fileID: 8300000, guid: 0d3e7d0aeb69e8e4cb9113b017bbcb74, type: 3}
+  timeInSecondsTilNextLaser: 0
+  laserDamage: 2
+  laserPrefab: {fileID: 4692171594025769783, guid: f4a5eb685186cf74c8054b1a89fa4b76,
+    type: 3}
+  hitLaserVFX: {fileID: 3151690269947350039, guid: de3713c3ac7a7c14baa8ac79da8906f2,
+    type: 3}
+  laserCannonSprite: {fileID: 21300000, guid: 7a2aebe8a66d77c4eb47e0be2f82066c, type: 3}
+  laserShootSFX: {fileID: 8300000, guid: 9017788251e261c469c04ee0547dc0a7, type: 3}
+  timeInSecondsTilNextRay: 0.5
+  rayDamage: 3.5
+  rayPrefab: {fileID: 2859025250854979498, guid: e55c01a88695b5348bd582d701edf0d0,
+    type: 3}
+  hitRayVFX: {fileID: 1322995119755310853, guid: 208c8ec86cf16584c970ab84aeab6226,
+    type: 3}
+  rayCannon: {fileID: 21300000, guid: 2564b8d6d6d0ebb428945d775c751df0, type: 3}
+  rayShootSFX: {fileID: 8300000, guid: 4353cb2fc9419464399d2b30e630d9e6, type: 3}
+  icons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

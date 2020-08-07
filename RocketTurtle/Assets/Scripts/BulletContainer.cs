@@ -6,7 +6,7 @@ public class BulletContainer : MonoBehaviour
 {
     [Header("Cannon Ball")]
     [SerializeField] float timeInSecondsTilNextCannon = 2f;
-    [SerializeField] int cannonBallDamage = 5;
+    [SerializeField] float cannonBallDamage = 5;
     [SerializeField] GameObject cannonBallPrefab = null;
     [SerializeField] GameObject hitCannonVFX = null;
     [SerializeField] Sprite cannonSprite = null;
@@ -14,7 +14,7 @@ public class BulletContainer : MonoBehaviour
 
     [Header("Laser")]
     [SerializeField] float timeInSecondsTilNextLaser = 0;
-    [SerializeField] int laserDamage = 2;
+    [SerializeField] float laserDamage = 2;
     [SerializeField] GameObject laserPrefab = null;
     [SerializeField] GameObject hitLaserVFX = null;
     [SerializeField] Sprite laserCannonSprite = null;
@@ -22,7 +22,7 @@ public class BulletContainer : MonoBehaviour
 
     [Header("Ray Gun")]
     [SerializeField] float timeInSecondsTilNextRay = 0.5f;
-    [SerializeField] int rayDamage = 2;
+    [SerializeField] float rayDamage = 2;
     [SerializeField] GameObject rayPrefab = null;
     [SerializeField] GameObject hitRayVFX = null;
     [SerializeField] Sprite rayCannon = null;
@@ -43,9 +43,9 @@ public class BulletContainer : MonoBehaviour
 
     private void Start()
     {
-        cannonBall = Projectile.NewProjectile(timeInSecondsTilNextCannon, cannonBallDamage, hitCannonVFX, cannonBallPrefab, cannonSprite, cannonShootSFX, "CannonBall");
-        laser = Projectile.NewProjectile(timeInSecondsTilNextLaser, laserDamage, hitLaserVFX, laserPrefab, laserCannonSprite, laserShootSFX, "Laser");
-        rayBeam = Projectile.NewProjectile(timeInSecondsTilNextRay, rayDamage, hitRayVFX, rayPrefab, rayCannon, rayShootSFX, "Ray");
+        cannonBall = Projectile.newProjectile(timeInSecondsTilNextCannon, cannonBallDamage, hitCannonVFX, cannonBallPrefab, cannonSprite, cannonShootSFX, "CannonBall");
+        laser = Projectile.newProjectile(timeInSecondsTilNextLaser, laserDamage, hitLaserVFX, laserPrefab, laserCannonSprite, laserShootSFX, "Laser");
+        rayBeam = Projectile.newProjectile(timeInSecondsTilNextRay, rayDamage, hitRayVFX, rayPrefab, rayCannon, rayShootSFX, "Ray");
 
         projectiles.Add(cannonBall);
         projectiles.Add(laser);

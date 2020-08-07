@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     //Will Get Input From Bullet Container
     float timeTilNext;
-    int damage;
+    float damage;
     GameObject hitVFX;
     GameObject bulletPrefab;
     Sprite cannonSprite;
@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour
             }
         }
     }
-    public static Projectile NewProjectile(float timeTilNext, int damage, GameObject hitVFX, GameObject bulletPrefab, Sprite cannonSprite, AudioClip shootSFX, string name)
+    public static Projectile newProjectile(float timeTilNext, float damage, GameObject hitVFX, GameObject bulletPrefab, Sprite cannonSprite, AudioClip shootSFX, string name)
     {
         Projectile projectile = new GameObject("Projectiles").AddComponent<Projectile>();
 
@@ -58,7 +58,7 @@ public class Projectile : MonoBehaviour
         return hitVFX;
     }
 
-    public int getDamage()
+    public float getDamage()
     {
         return damage;
     }

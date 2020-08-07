@@ -6,12 +6,14 @@ public class DayNight : MonoBehaviour
 {
     [SerializeField] float timeTilNextCycle = 180f; //Seconds
 
-    public static Animator anime;
+    Animator anime;
     void Start()
     {
         anime = GetComponent<Animator>();
 
         StartCoroutine(DayCycle());
+
+        
     }
 
 
