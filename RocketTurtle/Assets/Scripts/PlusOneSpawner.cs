@@ -10,6 +10,7 @@ public class PlusOneSpawner : MonoBehaviour
     [SerializeField] float maxX = 8f;
     [SerializeField] float timeTilFirstPowerUp = 100;
     [SerializeField] float timeTilSecondPowerUp = 200;
+    [SerializeField] float scoreRequirement = 40;
 
     float time;
 
@@ -33,8 +34,11 @@ public class PlusOneSpawner : MonoBehaviour
 
     void spawn()
     {
-        Vector2 pos = new Vector2(FindObjectOfType<PlayerMovement>().transform.position.x, transform.position.y);
-        GameObject stuff = Instantiate(powerUp, pos, Quaternion.identity);
-        time = timeTilSecondPowerUp;
+        if(ScoreManager.currentScore > scoreRequirement)
+        {
+            Vector2 pos = new Vector2(FindObjectOfType<PlayerMovement>().transform.position.x, transform.position.y);
+            GameObject stuff = Instantiate(powerUp, pos, Quaternion.identity);
+            time = timeTilSecondPowerUp;
+        }      
     }
 }

@@ -8,8 +8,10 @@ public class SpawnFromSky : MonoBehaviour
     [SerializeField] float minX = -8f;
     [SerializeField] float maxX = 8f;
     [SerializeField] bool spawnEggs;
+    [SerializeField] bool spawnNearPlayer;
     [SerializeField] float minDuration;
     [SerializeField] float maxDuration;
+    [SerializeField] GameObject player;
 
     GameObject index;
 
@@ -34,6 +36,13 @@ public class SpawnFromSky : MonoBehaviour
         if (spawnEggs)
             spawnEgg();
         GameObject thing = Instantiate(index, transform.position, Quaternion.identity);
+
+        if(spawnNearPlayer)
+        {
+            minX = Mathf.Clamp(player.transform.position.x - 4, -8, 8);
+            maxX = Mathf.Clamp(player.transform.position.x + 4, -8, 8);
+        }
+
         thing.transform.position = new Vector2(Random.Range(minX, maxX), transform.position.y);
     }
 

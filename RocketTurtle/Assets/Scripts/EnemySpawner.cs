@@ -31,7 +31,10 @@ public class EnemySpawner : MonoBehaviour
             maxEnemyCount = 20;
 
         if (ScoreManager.currentScore >= 150)
-            timeTilEachSpawn = 0.25f;
+            timeTilEachSpawn = 0.325f
+                ;
+        if (ScoreManager.currentScore >= 350)
+            timeTilEachSpawn = 0.3f;
     }
 
     IEnumerator spawnEnemies()
@@ -89,7 +92,7 @@ public class EnemySpawner : MonoBehaviour
         {
             previousScore = ScoreManager.currentScore;
 
-            if (ScoreManager.currentScore <= 30 || ScoreManager.currentScore >= 50)
+            if (ScoreManager.currentScore < 30 || ScoreManager.currentScore >= 50)
             {
                 timeTilEachSpawn -= 0.25f;
             }           

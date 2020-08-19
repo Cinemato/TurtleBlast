@@ -9,7 +9,7 @@ public class Currency : MonoBehaviour
     
     public static int currentStars = 0;
 
-    private void Start()
+    private void Update()
     {
         starsText.text = PlayerPrefs.GetInt("Stars", 0).ToString();
     }

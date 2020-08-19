@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void explode()
+    public void explode()
     {
         GameObject explodeVFX = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explodeVFX, 3f);

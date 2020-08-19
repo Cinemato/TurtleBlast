@@ -44,7 +44,7 @@ public class EnemyCannon : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timeBeforeFire);
-            if(player != null)
+            if(player.GetComponent<PlayerMovement>().enabled)
             {
                 if (player.transform.position.x < transform.position.x)
                 {

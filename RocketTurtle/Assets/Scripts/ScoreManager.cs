@@ -9,11 +9,25 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] GameObject newScoreVFX = null;
     [SerializeField] AudioClip newScoreSFX = null;
     [SerializeField] GameObject AdditionAnimation = null;
+    [SerializeField] GameObject numberOfWeaponsText = null;
+    [SerializeField] PlayerStats ps = null;
     public static int currentScore = 0;
     bool vfxStarted = false;
+    TextMeshProUGUI weaponText = null;
+
+    private void Start()
+    {
+        weaponText = numberOfWeaponsText.GetComponent<TextMeshProUGUI>();
+    }
 
     private void Update()
     {
+        if(ps.getNumberOfWeapons() > 1)
+        {
+            numberOfWeaponsText.SetActive(true);
+            weaponText.text = "x" + ps.getNumberOfWeapons();
+        }
+
         scoreText.text = currentScore.ToString();
         if (currentScore > PlayerPrefs.GetInt("Highscore", 0) && PlayerPrefs.GetInt("Highscore", 0) != 0 && !vfxStarted)
         {

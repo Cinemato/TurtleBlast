@@ -10,6 +10,12 @@ public class EnemyStateChanger : MonoBehaviour
     [SerializeField] int normalParrotMidGameSpawnLimit;
     [SerializeField] int normalScoreRequiredToChangeLimit;
 
+    [Header("Fast Parrot Speed")]
+    [SerializeField] Enemy fastParrot;
+    [SerializeField] float fastParrotOriginalSpeed;
+    [SerializeField] float fastParrotNewSpeed;
+    [SerializeField] int fastParrotScoreRequiredToChangeSpeed;
+
     [Header("Big Parrot Limit")]
     [SerializeField] Enemy bigParrot;
     [SerializeField] int bigParrotOriginalSpawnLimit;
@@ -31,6 +37,7 @@ public class EnemyStateChanger : MonoBehaviour
     {
         fluffCannon.setSpawnLimit(fluffCannonOriginalSpawnLimit);
         normalParrot.setSpawnLimit(normalParrotOriginalSpawnLimit);
+        fastParrot.GetComponent<MoveObject>().setSpeed(fastParrotOriginalSpeed);
         bigParrot.setSpawnLimit(bigParrotOriginalSpawnLimit);
     }
 
@@ -51,5 +58,7 @@ public class EnemyStateChanger : MonoBehaviour
         if (ScoreManager.currentScore >= bigLateScoreRequiredToChangeLimit)
             bigParrot.setSpawnLimit(bigParrotLateGameSpawnLimit);
 
+        if (ScoreManager.currentScore >= fastParrotScoreRequiredToChangeSpeed)
+            fastParrot.GetComponent<MoveObject>().setSpeed(fastParrotNewSpeed);
     }
 }

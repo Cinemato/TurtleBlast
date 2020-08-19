@@ -27,7 +27,7 @@ public class PlayerFire : MonoBehaviour
 
     public void fire()
     {     
-        if(BulletContainer.currentBulletTime <= 0)
+        if(BulletContainer.currentBulletTime <= 0 && GetComponent<PlayerMovement>().enabled)
         {
             for(int i = 0; i < cannonTips.Length; i++)
             {

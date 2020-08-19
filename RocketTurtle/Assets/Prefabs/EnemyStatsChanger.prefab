@@ -48,6 +48,11 @@ MonoBehaviour:
   normalParrotOriginalSpawnLimit: 10
   normalParrotMidGameSpawnLimit: 20
   normalScoreRequiredToChangeLimit: 60
+  fastParrot: {fileID: 9098445396010756443, guid: ed173246dbf9de54896e5c959b6b41be,
+    type: 3}
+  fastParrotOriginalSpeed: 7.5
+  fastParrotNewSpeed: 9.5
+  fastParrotScoreRequiredToChangeSpeed: 250
   bigParrot: {fileID: 3496245254865564600, guid: 811d62f7fa88abc4ab55e9d094378fce,
     type: 3}
   bigParrotOriginalSpawnLimit: 1
@@ -61,4 +66,4 @@ MonoBehaviour:
   fluffCannonMidGameSpawnLimit: 2
   fluffCannonLateGameSpawnLimit: 3
   fluffMidScoreRequiredToChangeLimit: 40
-  fluffLateScoreRequiredToChangeLimit: 150
+  fluffLateScoreRequiredToChangeLimit: 300
