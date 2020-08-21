@@ -24,17 +24,20 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (timeTilEachSpawn != 0.5f)
+        if (timeTilEachSpawn > 0.5f)
             checkScoreForSpawnLevel();
 
         if (ScoreManager.currentScore >= 60)
             maxEnemyCount = 20;
 
         if (ScoreManager.currentScore >= 150)
-            timeTilEachSpawn = 0.325f
+            timeTilEachSpawn = 0.325f           
                 ;
         if (ScoreManager.currentScore >= 350)
             timeTilEachSpawn = 0.3f;
+
+        if (ScoreManager.currentScore >= 600)
+            timeTilEachSpawn = 0.275f;
     }
 
     IEnumerator spawnEnemies()

@@ -18,11 +18,14 @@ public class PlayerDeath : MonoBehaviour
             {
                 GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, 0.8f);
-                AudioSource.PlayClipAtPoint(explodeSFX, Camera.main.transform.position);
-                bool newScore = ScoreManager.compareScore();
+                AudioSource.PlayClipAtPoint(explodeSFX, Camera.main.transform.position);               
 
                 if (ps.getHasRespawned())
+                {
+                    bool newScore = ScoreManager.compareScore();
                     loseMenu.showLoseMenu(newScore);
+                }
+                    
                 else
                     adMenu.SetActive(true);
 

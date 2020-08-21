@@ -54,8 +54,7 @@ public class ScoreManager : MonoBehaviour
             return true;
         }
 
-        return false;
-            
+        return false;           
     }
 
     public void additionScore(int score)

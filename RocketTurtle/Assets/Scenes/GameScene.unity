@@ -9603,6 +9603,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 82a284846f2c9274ab6c973ce4c6aacb, type: 3}
   - {fileID: 21300000, guid: 155cbb67d4fd44740b5287f25fa0b954, type: 3}
   - {fileID: 21300000, guid: 5bf0ca0463d035342a86cfdfffa795ce, type: 3}
+  - {fileID: 21300000, guid: 1e8834dac3b79d245aafdc191097ad13, type: 3}
+  - {fileID: 21300000, guid: e2e7b9f22484895439bdf6bc87c08629, type: 3}
+  - {fileID: 21300000, guid: 624b62fdfd8b94342b2db989c16de33d, type: 3}
 --- !u!4 &1401066658
 Transform:
   m_ObjectHideFlags: 0
@@ -9914,8 +9917,8 @@ MonoBehaviour:
   maxX: 8
   spawnEggs: 0
   spawnNearPlayer: 1
-  minDuration: 70
-  maxDuration: 120
+  minDuration: 85
+  maxDuration: 150
   player: {fileID: 5256283160980569289}
 --- !u!1 &1668945065
 GameObject:
@@ -11095,7 +11098,7 @@ MonoBehaviour:
   spawnEggs: 0
   spawnNearPlayer: 1
   minDuration: 65
-  maxDuration: 85
+  maxDuration: 100
   player: {fileID: 5256283160980569289}
 --- !u!1 &1951784926
 GameObject:
