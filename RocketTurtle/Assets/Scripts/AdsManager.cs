@@ -8,10 +8,10 @@ public class AdsManager : MonoBehaviour
 {
     public static AdsManager instance;
 
-    private string appID = "ca-app-pub-3940256099942544~3347511713";
+    private string appID = "ca-app-pub-2241590936123058~5678988540";
 
     private RewardBasedVideoAd rewardedAd;
-    private string rewardedAdID = "ca-app-pub-3940256099942544/5224354917";
+    private string rewardedAdID = "ca-app-pub-2241590936123058/1890296089";
 
     private void Awake()
     {
@@ -64,8 +64,6 @@ public class AdsManager : MonoBehaviour
 
 
     }
-
-
 
     public void HandleRewardBasedVideoRewarded(object sender, Reward args)
     {

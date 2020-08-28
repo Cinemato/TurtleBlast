@@ -33,15 +33,22 @@ public class EnemyStateChanger : MonoBehaviour
     [SerializeField] int fluffMidScoreRequiredToChangeLimit;
     [SerializeField] int fluffLateScoreRequiredToChangeLimit;
 
+    public static EnemyStateChanger instance;
+
     private void Start()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
         fluffCannon.setSpawnLimit(fluffCannonOriginalSpawnLimit);
         normalParrot.setSpawnLimit(normalParrotOriginalSpawnLimit);
         fastParrot.GetComponent<MoveObject>().setSpeed(fastParrotOriginalSpeed);
         bigParrot.setSpawnLimit(bigParrotOriginalSpawnLimit);
     }
 
-    private void Update()
+    public void changeDifficulty()
     {
         if (ScoreManager.currentScore >= fluffMidScoreRequiredToChangeLimit)
             fluffCannon.setSpawnLimit(fluffCannonMidGameSpawnLimit);

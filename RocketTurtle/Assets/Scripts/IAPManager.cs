@@ -10,7 +10,7 @@ using UnityEngine.Purchasing;
 // Deriving the Purchaser class from IStoreListener enables it to receive messages from Unity Purchasing.
 public class IAPManager : MonoBehaviour, IStoreListener
 {
-    [SerializeField] GameObject iapButton;
+    [SerializeField] PurchaseCheck purchaseCheck;
 
     private static IStoreController m_StoreController;          // The Unity Purchasing system.
     private static IExtensionProvider m_StoreExtensionProvider; // The store-specific Purchasing subsystems.
@@ -129,12 +129,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
         {
             Debug.Log("You will have all skins! Enjoy :)");
 
-            for (int i = 1; i < Skins.hasBought.Length; i++)
-            {
-                Skins.hasBought[i] = PlayerPrefs.GetInt("HasBought" + i, 1); //Setting all skins tobought
-            }
-
-            iapButton.SetActive(false);
+            PlayerPrefs.SetInt("AllSkins", 0);
+            purchaseCheck.buyAllSkins();
         }
         else
         {

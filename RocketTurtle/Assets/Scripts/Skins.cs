@@ -14,6 +14,7 @@ public class Skins : MonoBehaviour
     [SerializeField] AudioClip selectSound;
     [SerializeField] AudioClip failSound;
     [SerializeField] AudioClip buySound;
+    [SerializeField] PurchaseCheck purchaseCheck;
 
     public static int[] hasBought; // Checks if a skin is bought or not. 1 for true, 0 for false.
     SpriteRenderer renderer;
@@ -30,6 +31,8 @@ public class Skins : MonoBehaviour
         {
             hasBought[i] = PlayerPrefs.GetInt("HasBought" + i, 0); //Setting all other skins to not bought
         }
+
+        purchaseCheck.buyAllSkins();
 
         renderer = player.GetComponent<SpriteRenderer>();
     }

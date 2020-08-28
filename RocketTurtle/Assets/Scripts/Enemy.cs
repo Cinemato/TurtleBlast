@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
         {
             if (GetComponent<EnemyProjectileMovement>() == null && FindObjectOfType<PlayerMovement>() != null)
             {
+                EnemyStateChanger.instance.changeDifficulty();
                 ScoreManager.addToScore(scoreAdditionAmount);
 
                 if(CompareTag("BigParrot"))

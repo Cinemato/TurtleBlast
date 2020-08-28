@@ -230,7 +230,7 @@ MonoBehaviour:
   hp: 7
   spawnChance: 0.1
   scoreToSpawn: 0
-  spawnLimit: 30
+  spawnLimit: 10
   deathVFX: {fileID: 4624955092719076306, guid: 43d776930c0153c41946e9489c927731,
     type: 3}
   explosionSFX: {fileID: 8300000, guid: 4bb1b705a77eca240a4824ea1f5110b0, type: 3}

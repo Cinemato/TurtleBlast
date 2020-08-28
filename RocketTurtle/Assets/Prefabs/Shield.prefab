@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2656797861593134470}
   - component: {fileID: 2656797861593134469}
-  - component: {fileID: 2656797861593134471}
   - component: {fileID: 1236295383}
   - component: {fileID: 1236295382}
+  - component: {fileID: 2656797861593134471}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -84,21 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2656797861593134471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2656797861593134468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 820e067f968ad134bac16641830002d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupSound: {fileID: 8300000, guid: 7dd1782f46ba758488a5d14bf230d2ff, type: 3}
-  explosionVFX: {fileID: 4243885379863675982, guid: f443ed9cb8b406848a5a397d4b14d6a5,
-    type: 3}
 --- !u!50 &1236295383
 Rigidbody2D:
   serializedVersion: 4
@@ -136,3 +121,18 @@ CircleCollider2D:
   m_Offset: {x: -0.01351964, y: 0.008111894}
   serializedVersion: 2
   m_Radius: 0.2645802
+--- !u!114 &2656797861593134471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2656797861593134468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820e067f968ad134bac16641830002d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 7dd1782f46ba758488a5d14bf230d2ff, type: 3}
+  explosionVFX: {fileID: 4243885379863675982, guid: f443ed9cb8b406848a5a397d4b14d6a5,
+    type: 3}

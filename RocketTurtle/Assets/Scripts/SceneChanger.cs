@@ -8,18 +8,25 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] GameObject sceneTransition1;
     [SerializeField] AudioClip selectSound;
 
+    private void Start()
+    {
+        AudioConfiguration config = AudioSettings.GetConfiguration();
+        config.dspBufferSize = 2048;
+        AudioSettings.Reset(config);
+    }
+
     public void mainMenu()
     {
         addHighScore();
         SceneManager.LoadScene(0);
-        AudioSource.PlayClipAtPoint(selectSound, Camera.main.transform.position, 0.3f);
+        AudioSource.PlayClipAtPoint(selectSound, Camera.main.transform.position, 0.5f);
     }
 
     public void gameScene()
     {
         addHighScore();
         sceneTransition1.SetActive(true);
-        AudioSource.PlayClipAtPoint(selectSound, Camera.main.transform.position, 0.3f);
+        AudioSource.PlayClipAtPoint(selectSound, Camera.main.transform.position, 0.5f);
         StartCoroutine(waitForTransition());       
     }
 

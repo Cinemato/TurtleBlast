@@ -155,6 +155,8 @@ MonoBehaviour:
   hitSFX: {fileID: 8300000, guid: 63b31f431a6fae44e8dca915b5ff9e0f, type: 3}
   star: {fileID: 1031819938565991675, guid: cb638a11bf73b0349a89385328317fd4, type: 3}
   starCollectionSound: {fileID: 8300000, guid: f43bcdd8f783dd84881dcd2aa18d90d4, type: 3}
+  scoreAdditionAmount: 1
+  ec: {fileID: 1139485028672375667, guid: 440b465fd66d5374ca56c9523582cc5d, type: 3}
 --- !u!95 &8861859500707381223
 Animator:
   serializedVersion: 3
