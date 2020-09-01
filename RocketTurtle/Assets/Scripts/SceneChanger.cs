@@ -8,13 +8,6 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] GameObject sceneTransition1;
     [SerializeField] AudioClip selectSound;
 
-    private void Start()
-    {
-        AudioConfiguration config = AudioSettings.GetConfiguration();
-        config.dspBufferSize = 2048;
-        AudioSettings.Reset(config);
-    }
-
     public void mainMenu()
     {
         addHighScore();

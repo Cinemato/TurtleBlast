@@ -10,12 +10,14 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     [SerializeField] AudioClip deathSFX;
     [SerializeField] AudioClip explodeSFX;
+    [SerializeField] GameObject moveText;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<Enemy>())
         {   
             if(!ps.getHasShieldOn())
             {
+                moveText.SetActive(false);
                 GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
                 AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, 0.8f);
                 AudioSource.PlayClipAtPoint(explodeSFX, Camera.main.transform.position);               

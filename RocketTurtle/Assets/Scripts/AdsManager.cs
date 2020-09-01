@@ -6,6 +6,8 @@ using System;
 
 public class AdsManager : MonoBehaviour
 {
+    [SerializeField] GameObject noAds;
+
     public static AdsManager instance;
 
     private string appID = "ca-app-pub-2241590936123058~5678988540";
@@ -49,7 +51,12 @@ public class AdsManager : MonoBehaviour
         if (rewardedAd.IsLoaded())
             rewardedAd.Show();
         else
+        {
             Debug.Log("Rewarded Ad Not Loaded");
+            noAds.SetActive(true);
+            StartCoroutine(removeText());
+        }
+            
     }
 
     public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
@@ -78,5 +85,11 @@ public class AdsManager : MonoBehaviour
     {
         Debug.Log("Rewarded video has closed");
         RequestRewardedAd();
+    }
+
+    IEnumerator removeText()
+    {
+        yield return new WaitForSeconds(3f);
+        noAds.SetActive(false);
     }
 }

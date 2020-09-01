@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed;
     [SerializeField] Joystick js;
+    [SerializeField] GameObject moveText;
 
     void Start()
     {
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
         //Getting Player Input From Joystick
         Vector2 playerInput = new Vector2(js.Horizontal, js.Vertical);
         velocity = playerInput.normalized * speed;
+
+        if (velocity.x != 0)
+            moveText.SetActive(false);
 
         //Checking If Player Is Going Forward Or Not
         if(js.Horizontal <= 0)

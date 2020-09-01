@@ -9,6 +9,10 @@ public class FloatingJoystick : Joystick
     {
         base.Start();
         background.gameObject.SetActive(false);
+
+        var pointer = new PointerEventData(EventSystem.current);
+        ExecuteEvents.Execute(gameObject, pointer, ExecuteEvents.pointerDownHandler);
+        ExecuteEvents.Execute(gameObject, pointer, ExecuteEvents.pointerUpHandler);
     }
 
     public override void OnPointerDown(PointerEventData eventData)
