@@ -1,2 +1,2 @@
-# RocketTurtle
-Repository for Rocket Turtle. Unity Project
+# TurtleBlast
+Repository for Turtle Blast. Unity Project
