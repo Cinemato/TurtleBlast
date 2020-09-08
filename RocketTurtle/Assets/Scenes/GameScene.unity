@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PAY 25
+  m_text: PAY 60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b3a938a3ebb5bc488272bca19a35051, type: 2}
   m_sharedMaterial: {fileID: -2891755633285256211, guid: 6b3a938a3ebb5bc488272bca19a35051,
@@ -10219,7 +10219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21.799988}
+  m_AnchoredPosition: {x: 0, y: -22}
   m_SizeDelta: {x: -664.3, y: -374.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544073133
@@ -10427,7 +10427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e14eb82e545db24189e4c295d97badf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 25
+  price: 60
   successSFX: {fileID: 8300000, guid: e98e2e1d0f02fca40aff4c5c081c1f84, type: 3}
   failSFX: {fileID: 8300000, guid: 2ffe6927a08cbc94d9bd634229f3f268, type: 3}
 --- !u!1 &1642892854
