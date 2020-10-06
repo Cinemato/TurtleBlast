@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] int requiredScoreDifferneceForDifficulty = 5;
 
     public static int count = 0;
+    public static EnemySpawner instance;
 
     int previousScore = 0;
     Vector2 enemyPosition;
@@ -18,11 +19,16 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
         count = 0;
         StartCoroutine(spawnEnemies());
     }
 
-    private void Update()
+    public void UpdateSpawnRate()
     {
         if (timeTilEachSpawn > 0.5f)
             checkScoreForSpawnLevel();
@@ -31,8 +37,7 @@ public class EnemySpawner : MonoBehaviour
             maxEnemyCount = 20;
 
         if (ScoreManager.currentScore >= 150)
-            timeTilEachSpawn = 0.325f           
-                ;
+            timeTilEachSpawn = 0.325f;
         if (ScoreManager.currentScore >= 350)
             timeTilEachSpawn = 0.3f;
 
@@ -71,7 +76,7 @@ public class EnemySpawner : MonoBehaviour
 
             if (GameObject.FindGameObjectsWithTag(enemy.tag).Length >= enemy.getSpawnLimit())
             {
-                Debug.Log("Too Many" + enemy.tag + "Count: " + GameObject.FindGameObjectsWithTag(enemy.tag).Length);
+                //Debug.Log("Too Many" + enemy.tag + "Count: " + GameObject.FindGameObjectsWithTag(enemy.tag).Length);
                 enemyIndex = randomNumberExcept(0, enemies.Length, enemyIndex);
                 enemy = enemies[enemyIndex];
             }       

@@ -49,4 +49,17 @@ public class MoveObject : MonoBehaviour
         return towardsRight;
     }
 
+    public float getSpeed()
+    {
+        return speed;
+    }
+
+    public IEnumerator OriginalSpeed(Animator anime)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        rb.velocity = new Vector2(-speed, 0);
+
+        anime.SetBool("IsHurt", false);
+    }
 }

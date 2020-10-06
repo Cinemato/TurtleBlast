@@ -15,8 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip starCollectionSound = null;
     [SerializeField] int scoreAdditionAmount = 1;
 
-    PlayerFire pf;
-    ScoreManager sm;
+    Animator anime;
+    MoveObject mo;
 
     private void Start()
     {
@@ -27,17 +27,19 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        sm = FindObjectOfType<ScoreManager>();
-        pf = FindObjectOfType<PlayerFire>();
+        mo = GetComponent<MoveObject>();
+        anime = GetComponent<Animator>();
     } 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.GetComponent<Projectile>())
-        {
+        {           
             Projectile projectile = collision.gameObject.GetComponent<Projectile>();           
             GameObject hitVFX = Instantiate(projectile.getHitVFX(), collision.gameObject.transform.position, Quaternion.identity);
+
             AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, 4);
+
             Destroy(collision.gameObject);
             Destroy(hitVFX, 2f);
             
@@ -45,9 +47,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void recieveDamage(float damage)
+    public void recieveDamage(float damage)
     {
-        hp -= damage;
+        hp -= damage;        
 
         if (hp <= 0)
         {
@@ -59,14 +61,13 @@ public class Enemy : MonoBehaviour
                 if(CompareTag("BigParrot"))
                 {
                     Currency.addStars(1, star, transform.position, starCollectionSound);
-                    sm.additionScore(scoreAdditionAmount);
+                    ScoreManager.instance.additionScore(scoreAdditionAmount);
                 }
 
                 if (ScoreManager.currentScore % 5 == 0)
                 {
                     Currency.addStars(1, star, transform.position, starCollectionSound);
                 }
-
             }
 
             explode();                                   
@@ -74,12 +75,16 @@ public class Enemy : MonoBehaviour
         
         else
         {
-            pf.shakeCamera(0.05f, 0.05f);
+            PlayerFire.instance.shakeCamera(0.05f, 0.05f);
+
+            if (!GetComponent<EnemyCannon>() && !GetComponent<EnemyProjectileMovement>())
+                StartCoroutine(mo.OriginalSpeed(anime));
         }
     }
 
     public void explode()
     {
+        EnemySpawner.instance.UpdateSpawnRate(); //Change Difficulty Depending On Score
         GameObject explodeVFX = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explodeVFX, 3f);
         if(!CompareTag("FluffBall"))
@@ -87,7 +92,7 @@ public class Enemy : MonoBehaviour
             EnemySpawner.count--;
         }   
         AudioSource.PlayClipAtPoint(explosionSFX, Camera.main.transform.position, 0.6f);
-        pf.shakeCamera(0.3f, 0.05f);
+        PlayerFire.instance.shakeCamera(0.3f, 0.05f);
         Destroy(gameObject);
     }
 
@@ -115,4 +120,6 @@ public class Enemy : MonoBehaviour
     {
         this.spawnLimit = spawnLimit; 
     }
+
+    
 }

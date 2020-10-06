@@ -145,18 +145,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39e40b6886c70e478859b8e39acc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 2
+  hp: 1
   spawnChance: 0
   scoreToSpawn: 0
   spawnLimit: 0
-  deathVFX: {fileID: 4624955092719076306, guid: 43d776930c0153c41946e9489c927731,
+  deathVFX: {fileID: 1901218410753460218, guid: 3af037a40f845af45b146b5622f691c4,
     type: 3}
   explosionSFX: {fileID: 8300000, guid: 4bb1b705a77eca240a4824ea1f5110b0, type: 3}
   hitSFX: {fileID: 8300000, guid: 63b31f431a6fae44e8dca915b5ff9e0f, type: 3}
   star: {fileID: 1031819938565991675, guid: cb638a11bf73b0349a89385328317fd4, type: 3}
   starCollectionSound: {fileID: 8300000, guid: f43bcdd8f783dd84881dcd2aa18d90d4, type: 3}
   scoreAdditionAmount: 1
-  ec: {fileID: 1139485028672375667, guid: 440b465fd66d5374ca56c9523582cc5d, type: 3}
 --- !u!95 &8861859500707381223
 Animator:
   serializedVersion: 3

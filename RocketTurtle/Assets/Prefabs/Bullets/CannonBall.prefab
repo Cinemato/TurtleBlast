@@ -4768,6 +4768,7 @@ GameObject:
   - component: {fileID: 6964708503796681712}
   - component: {fileID: -8220496534354536912}
   - component: {fileID: 9185555559170455239}
+  - component: {fileID: 2859149957390336029}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: CannonBall
@@ -4902,3 +4903,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 9
+--- !u!114 &2859149957390336029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964708503796681711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4292b5020e6a73442a5df8a6a1e858d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 2.5
+  force: 39.1
+  areaDamage: 1.5

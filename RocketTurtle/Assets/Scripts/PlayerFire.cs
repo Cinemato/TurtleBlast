@@ -11,6 +11,16 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] PlayerStats ps;
     [SerializeField] CameraShake cm;
 
+    public static PlayerFire instance;
+
+    public void Start()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+    }
+
     private void Update()
     {
         if (BulletContainer.currentBulletTime > 0)  //Checking If Shooting Timer Is Finished Or Not

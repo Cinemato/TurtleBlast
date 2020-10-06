@@ -15,8 +15,15 @@ public class ScoreManager : MonoBehaviour
     bool vfxStarted = false;
     TextMeshProUGUI weaponText = null;
 
+    public static ScoreManager instance;
+
     private void Start()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
         weaponText = numberOfWeaponsText.GetComponent<TextMeshProUGUI>();
     }
 

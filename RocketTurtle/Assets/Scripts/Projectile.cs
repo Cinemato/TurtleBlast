@@ -76,4 +76,9 @@ public class Projectile : MonoBehaviour
     {
         this.bulletPrefab = prefab;
     }
+
+    public string getName()
+    {
+        return name;
+    }
 }
