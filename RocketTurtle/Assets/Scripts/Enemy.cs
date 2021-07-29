@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
             recieveDamage(projectile.getDamage());
         }
     }
-
+    
     public void recieveDamage(float damage)
     {
         hp -= damage;        

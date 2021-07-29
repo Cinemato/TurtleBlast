@@ -12,7 +12,8 @@ public class PurchaseCheck : MonoBehaviour
         {
             for (int i = 1; i < Skins.hasBought.Length; i++)
             {
-                Skins.hasBought[i] = PlayerPrefs.GetInt("HasBought" + i, 1); //Setting all skins to bought
+                Skins.hasBought[i] = 1; //Setting all skins to bought
+                PlayerPrefs.SetInt("HasBought" + i, 1);
             }
 
             iapButton.SetActive(false);

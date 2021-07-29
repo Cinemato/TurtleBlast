@@ -20,7 +20,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     void Start()
     {
-
         if (m_StoreController == null)
         {
             InitializePurchasing();

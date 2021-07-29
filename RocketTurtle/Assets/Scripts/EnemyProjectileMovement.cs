@@ -14,8 +14,12 @@ public class EnemyProjectileMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<PlayerMovement>();
-        direction = (player.transform.position - transform.position).normalized * projectileSpeed;
+        move();
+    }
 
+    public void move()
+    {
+        direction = (player.transform.position - transform.position).normalized * projectileSpeed;
         rb.velocity = new Vector2(direction.x, direction.y);
     }
 }

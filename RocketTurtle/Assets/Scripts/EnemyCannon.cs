@@ -30,7 +30,7 @@ public class EnemyCannon : MonoBehaviour
     {
         if(player != null)
         {
-            if (!isMoving && player.transform.position.x < transform.position.x)
+            if (!isMoving && player.transform.position.x < transform.position.x && rb.constraints == RigidbodyConstraints2D.None)
             {
                 Vector2 difference = player.transform.position - transform.position;
                 float rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -44,7 +44,7 @@ public class EnemyCannon : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timeBeforeFire);
-            if(player.GetComponent<PlayerMovement>().enabled)
+            if(player.GetComponent<PlayerMovement>().enabled && rb.constraints == RigidbodyConstraints2D.None)
             {
                 if (player.transform.position.x < transform.position.x)
                 {

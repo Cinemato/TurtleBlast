@@ -13,11 +13,16 @@ public class MoveObject : MonoBehaviour
     {
         //Moving Object Using Rigidbody
         rb = GetComponent<Rigidbody2D>();
-        if(!towardsRight)
+        move();
+    }
+
+    public void move()
+    {
+        if (!towardsRight)
         {
             rb.velocity = new Vector2(-speed, 0);
         }
-        
+
         else
         {
             rb.velocity = new Vector2(speed, 0);
