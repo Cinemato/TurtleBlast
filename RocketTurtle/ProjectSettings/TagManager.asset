@@ -16,6 +16,7 @@ TagManager:
   - FluffCannon
   - FluffBall
   - FastParrot
+  - ArmorParrot
   layers:
   - Default
   - TransparentFX

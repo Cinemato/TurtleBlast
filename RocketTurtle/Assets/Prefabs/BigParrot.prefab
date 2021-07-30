@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3496245254865564594}
   - component: {fileID: 3496245254865564607}
   - component: {fileID: 3496245254865564600}
+  - component: {fileID: 1926666372116042720}
   m_Layer: 0
   m_Name: BigParrot
   m_TagString: BigParrot
@@ -241,3 +242,15 @@ MonoBehaviour:
   star: {fileID: 1031819938565991675, guid: cb638a11bf73b0349a89385328317fd4, type: 3}
   starCollectionSound: {fileID: 8300000, guid: f43bcdd8f783dd84881dcd2aa18d90d4, type: 3}
   scoreAdditionAmount: 5
+--- !u!114 &1926666372116042720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3496245254865564601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dde19bf9b2b47f478fd55c4fabe09e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

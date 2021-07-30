@@ -67,3 +67,8 @@ MonoBehaviour:
   fluffCannonLateGameSpawnLimit: 3
   fluffMidScoreRequiredToChangeLimit: 40
   fluffLateScoreRequiredToChangeLimit: 300
+  armorParrot: {fileID: 4960033330193933161, guid: 4739f4bb10205274a9869fbc4f65d9cc,
+    type: 3}
+  armorParrotOriginalSpawnLimit: 1
+  armorParrotLateGameSpawnLimit: 2
+  armorLateScoreRequiredToChangeLimit: 400

@@ -20,7 +20,7 @@ public class CannonBall : MonoBehaviour
 
                 Vector2 direction = c.transform.position - transform.position;
 
-                if (e != null && e.getHealth() < 800 && !e.CompareTag("BigParrot"))
+                if (e != null && e.getHealth() < 800 && !e.GetComponent<Armored>())
                 {
                     Animator anime = e.GetComponent<Animator>();
                     anime.SetBool("IsHurt", true);

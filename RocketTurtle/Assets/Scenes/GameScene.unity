@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -853,6 +853,7 @@ MonoBehaviour:
   - {fileID: 6381041944623416875, guid: 3cdc5ebc4ae138b4697d7d021d414177, type: 3}
   - {fileID: 3496245254865564600, guid: 811d62f7fa88abc4ab55e9d094378fce, type: 3}
   - {fileID: 9098445396010756443, guid: ed173246dbf9de54896e5c959b6b41be, type: 3}
+  - {fileID: 4960033330193933161, guid: 4739f4bb10205274a9869fbc4f65d9cc, type: 3}
   timeTilEachSpawn: 2.5
   maxEnemyCount: 10
   requiredScoreDifferneceForDifficulty: 5
@@ -12369,6 +12370,12 @@ PrefabInstance:
       propertyPath: moveText
       value: 
       objectReference: {fileID: 225260005}
+    - target: {fileID: 5256283160980569289, guid: 1c2fe147b0a32f640848bfd17327bff2,
+        type: 3}
+      propertyPath: deathVFX
+      value: 
+      objectReference: {fileID: 1302903636631228997, guid: 99cd42e2f5475b24fa9d387ad277d5cc,
+        type: 3}
     - target: {fileID: 5256283161053030213, guid: 1c2fe147b0a32f640848bfd17327bff2,
         type: 3}
       propertyPath: m_SortingOrder

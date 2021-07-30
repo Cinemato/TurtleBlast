@@ -33,6 +33,12 @@ public class EnemyStateChanger : MonoBehaviour
     [SerializeField] int fluffMidScoreRequiredToChangeLimit;
     [SerializeField] int fluffLateScoreRequiredToChangeLimit;
 
+    [Header("Armor Parrot Limit")]
+    [SerializeField] Enemy armorParrot;
+    [SerializeField] int armorParrotOriginalSpawnLimit;
+    [SerializeField] int armorParrotLateGameSpawnLimit;
+    [SerializeField] int armorLateScoreRequiredToChangeLimit;
+
     public static EnemyStateChanger instance;
 
     private void Start()
@@ -46,6 +52,7 @@ public class EnemyStateChanger : MonoBehaviour
         normalParrot.setSpawnLimit(normalParrotOriginalSpawnLimit);
         fastParrot.GetComponent<MoveObject>().setSpeed(fastParrotOriginalSpeed);
         bigParrot.setSpawnLimit(bigParrotOriginalSpawnLimit);
+        armorParrot.setSpawnLimit(armorParrotOriginalSpawnLimit);
     }
 
     public void changeDifficulty()
@@ -67,5 +74,8 @@ public class EnemyStateChanger : MonoBehaviour
 
         if (ScoreManager.currentScore >= fastParrotScoreRequiredToChangeSpeed)
             fastParrot.GetComponent<MoveObject>().setSpeed(fastParrotNewSpeed);
+
+        if (ScoreManager.currentScore >= armorLateScoreRequiredToChangeLimit)
+            armorParrot.setSpawnLimit(armorParrotLateGameSpawnLimit);
     }
 }
