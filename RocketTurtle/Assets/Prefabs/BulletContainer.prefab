@@ -59,8 +59,8 @@ MonoBehaviour:
     type: 3}
   laserCannonSprite: {fileID: 21300000, guid: 7a2aebe8a66d77c4eb47e0be2f82066c, type: 3}
   laserShootSFX: {fileID: 8300000, guid: 9017788251e261c469c04ee0547dc0a7, type: 3}
-  timeInSecondsTilNextRay: 0.5
-  rayDamage: 3.5
+  timeInSecondsTilNextRay: 0.75
+  rayDamage: 2.75
   rayPrefab: {fileID: 2859025250854979498, guid: e55c01a88695b5348bd582d701edf0d0,
     type: 3}
   hitRayVFX: {fileID: 1322995119755310853, guid: 208c8ec86cf16584c970ab84aeab6226,

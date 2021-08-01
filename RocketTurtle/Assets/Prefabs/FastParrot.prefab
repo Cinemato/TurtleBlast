@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a39e40b6886c70e478859b8e39acc11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
+  hp: 2.75
   spawnChance: 0.85
   scoreToSpawn: 3
   spawnLimit: 2

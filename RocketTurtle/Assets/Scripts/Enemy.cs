@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
 
     Animator anime;
     MoveObject mo;
+    bool hitUpper = false;
+    bool hitMiddle = false;
+    bool hitLower = false;
 
     private void Start()
     {
@@ -33,14 +36,37 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.GetComponent<Projectile>())
-        {           
-            Projectile projectile = collision.gameObject.GetComponent<Projectile>();           
+        if (collision.gameObject.GetComponent<Projectile>())
+        {
+            
+            Projectile projectile = collision.gameObject.GetComponent<Projectile>();
+            if (projectile.CompareTag("Ray") && projectile.transform.parent.CompareTag("UpperCannon") && hitUpper) { return; }
+            else if (projectile.CompareTag("Ray") && projectile.transform.parent.CompareTag("MiddleCannon") && hitMiddle) { return; }
+            else if (projectile.CompareTag("Ray") && projectile.transform.parent.CompareTag("LowerCannon") && hitLower) { return; }
+
             GameObject hitVFX = Instantiate(projectile.getHitVFX(), collision.gameObject.transform.position, Quaternion.identity);
 
             AudioSource.PlayClipAtPoint(hitSFX, Camera.main.transform.position, 4);
 
-            Destroy(collision.gameObject);
+            if (!projectile.CompareTag("Ray"))
+                Destroy(collision.gameObject);
+            else if(projectile.transform.parent.CompareTag("UpperCannon"))
+            {
+                hitUpper = true;
+                StartCoroutine(nextRayUpper());
+            }
+            else if (projectile.transform.parent.CompareTag("MiddleCannon"))
+            {
+                hitMiddle = true;
+                StartCoroutine(nextRayMiddle());
+            }
+            else
+            {
+                hitLower = true;
+                StartCoroutine(nextRayLower());
+            }
+                
+               
             Destroy(hitVFX, 2f);
             
             recieveDamage(projectile.getDamage());
@@ -95,6 +121,26 @@ public class Enemy : MonoBehaviour
         PlayerFire.instance.shakeCamera(0.3f, 0.05f);
         Destroy(gameObject);
     }
+
+    IEnumerator nextRayUpper()
+    {
+        yield return new WaitForSeconds(0.2f);
+        hitUpper = false;
+    }
+
+    IEnumerator nextRayMiddle()
+    {
+        yield return new WaitForSeconds(0.2f);
+        hitMiddle = false;
+    }
+
+
+    IEnumerator nextRayLower()
+    {
+        yield return new WaitForSeconds(0.2f);
+        hitLower = false;
+    }
+
 
     public float getSpawnChance()
     {
