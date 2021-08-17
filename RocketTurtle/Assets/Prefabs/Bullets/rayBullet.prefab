@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2113528464}
   - component: {fileID: -8527884329856740129}
   - component: {fileID: -8261862305221544780}
+  - component: {fileID: -2318856479390325059}
   m_Layer: 0
   m_Name: rayBullet
   m_TagString: Ray
@@ -201,3 +202,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 11.5
+--- !u!114 &-2318856479390325059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859025250854979498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf380a5826d5064a9f711c6bab58aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -53,16 +53,19 @@ public class Enemy : MonoBehaviour
             else if(projectile.transform.parent.CompareTag("UpperCannon"))
             {
                 hitUpper = true;
+                projectile.GetComponent<Ray>().plusHit();
                 StartCoroutine(nextRayUpper());
             }
             else if (projectile.transform.parent.CompareTag("MiddleCannon"))
             {
                 hitMiddle = true;
+                projectile.GetComponent<Ray>().plusHit();
                 StartCoroutine(nextRayMiddle());
             }
             else
             {
                 hitLower = true;
+                projectile.GetComponent<Ray>().plusHit();
                 StartCoroutine(nextRayLower());
             }
                 

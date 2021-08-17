@@ -11,6 +11,7 @@ public class SpawnFromSky : MonoBehaviour
     [SerializeField] bool spawnNearPlayer;
     [SerializeField] float minDuration;
     [SerializeField] float maxDuration;
+    [SerializeField] float scoreToSpawn;
     [SerializeField] GameObject player;
 
     GameObject index;
@@ -25,8 +26,13 @@ public class SpawnFromSky : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(Random.Range(minDuration, maxDuration));
-            spawn();
+            if (ScoreManager.currentScore >= scoreToSpawn)
+            {
+                yield return new WaitForSeconds(Random.Range(minDuration, maxDuration));
+                spawn();
+            }
+            else
+                yield return null;
         }
     }
 

@@ -36,7 +36,13 @@ public class EnemyCannon : MonoBehaviour
                 float rotateZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offset);
             }
-        }      
+            
+            if(transform.position.x >= 9.67 && rb.constraints == RigidbodyConstraints2D.FreezeAll)
+            {
+                EnemySpawner.count--;
+                Destroy(gameObject);
+            }
+        }
     }
 
     IEnumerator shoot()
@@ -51,7 +57,7 @@ public class EnemyCannon : MonoBehaviour
                     GameObject b = Instantiate(bullet, cannonTip.transform.position, Quaternion.identity);
                     GameObject vfx = Instantiate(shootVFX, cannonTip.transform.position, Quaternion.identity);
                     AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position);
-                    Destroy(b, 4f);
+                    Destroy(b, 15f);
                     Destroy(vfx, 1f);
                 }
             }                                  

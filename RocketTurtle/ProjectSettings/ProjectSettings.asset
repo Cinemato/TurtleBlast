@@ -42,7 +42,7 @@ PlayerSettings:
   m_SplashScreenLogos:
   - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
     duration: 2
-  - logo: {fileID: 21300000, guid: 03f3abd7ac998a842be95c2d6ac311d9, type: 3}
+  - logo: {fileID: 21300000, guid: 7b4ddf47005aa1c4db82c0c3385b563b, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -123,7 +123,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.4
+  bundleVersion: 1.4.5
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -169,7 +169,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 36
+  AndroidBundleVersionCode: 47
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -282,7 +282,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 5cc1f94a75f61ba458cb22f4e16ba73f, type: 3}
+      m_Icon: {fileID: 2800000, guid: d6d6f5e2193519d4299b8b31166dc344, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
