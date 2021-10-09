@@ -87,7 +87,7 @@ public class Freeze : MonoBehaviour
                 if (enemies[i].GetComponent<MoveObject>())
                     enemies[i].GetComponent<MoveObject>().move();
                 else if (enemies[i].GetComponent<EnemyProjectileMovement>())
-                    enemies[i].GetComponent<EnemyProjectileMovement>().move();
+                    enemies[i].GetComponent<EnemyProjectileMovement>().moveAgain();
                 else if (rb.isKinematic == false)
                 {
                     rb.isKinematic = true;

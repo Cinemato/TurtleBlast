@@ -22,4 +22,9 @@ public class EnemyProjectileMovement : MonoBehaviour
         direction = (player.transform.position - transform.position).normalized * projectileSpeed;
         rb.velocity = new Vector2(direction.x, direction.y);
     }
+
+    public void moveAgain()
+    {
+        rb.velocity = new Vector2(direction.x, direction.y);
+    }
 }
