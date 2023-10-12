@@ -120,6 +120,10 @@ public class IAPManager : MonoBehaviour, IStoreListener
         Debug.Log("OnInitializeFailed InitializationFailureReason:" + error);
     }
 
+    public void OnInitializeFailed(InitializationFailureReason error, string message)
+    {
+        // Implementation for new version
+    }
 
     public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)
     {
