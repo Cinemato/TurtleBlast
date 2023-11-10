@@ -50,13 +50,12 @@ public class AdsManager : MonoBehaviour
     {
         if (rewardedAd.IsLoaded())
             rewardedAd.Show();
-        else
+        else if(!noAds.activeInHierarchy)
         {
             Debug.Log("Rewarded Ad Not Loaded");
             noAds.SetActive(true);
             StartCoroutine(removeText());
-        }
-            
+        }        
     }
 
     public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
